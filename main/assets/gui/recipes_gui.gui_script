@@ -1,0 +1,200 @@
+function init(self)
+  -- 管理用変数設定
+  recipebook_bg = gui.get_node("recipebook_bg")
+  recipebook = gui.get_node("recipebook")
+  rb_close = gui.get_node("rb_close")
+  mission_item_highlight = gui.get_node("mission_item_highlight")
+  hide_recipebook()
+  gui.set_enabled(gui.get_node("recipebook_bg"), false)
+  rb_page = 1
+  rb_page_display = gui.get_node("page_num")
+  rb_arrows = {gui.get_node("arrow_right"),gui.get_node("arrow_left")}
+  rb_filter = gui.get_node("filter_item")
+  rb_lines = {}
+  rb_item_numbers = {}
+  rb_item_names = {}
+  rb_item_pics = {}
+  local i, j
+  for i = 1 ,5 do
+    rb_lines[i] = gui.get_node("rb_line"..i)
+    rb_item_numbers[i] = gui.get_node("rb_line"..i.."_number")
+    rb_item_names[i] = {gui.get_node("rb_line"..i.."_item1_name"),gui.get_node("rb_line"..i.."_item2_name"),gui.get_node("rb_line"..i.."_item3_name")}
+    rb_item_pics[i] = {gui.get_node("rb_line"..i.."_item1_pic"),gui.get_node("rb_line"..i.."_item2_pic"),gui.get_node("rb_line"..i.."_item3_pic")}
+  end
+  rb_filter_item = "none"
+  show_recipes = {}
+end
+
+function on_message(self, message_id, message, sender)
+  if message_id == hash("show_recipebook") then
+    -- フィルターを設定
+    if not message.flag then rb_filter_item = having_item_name end
+    show_recipebook()
+  elseif message_id == hash("hide_recipebook") then
+    hide_recipebook()
+  elseif message_id == hash("gamestart") then
+  gui.set_enabled(gui.get_node("recipebook_bg"), true)
+  end
+end
+
+function show_recipebook()
+  if not gamestatus then return end
+  if menu_status["dead"] or menu_status ["cheat"] then return end
+  msg.post("gui", "hide_menu")
+  msg.post("gui", "hide_manual")
+  -- ほかのGUIを消す
+  reload_rb()
+  gui.set_color(recipebook_bg, vmath.vector4(0, 0, 0, 0.5))
+  gui.set_color(recipebook, vmath.vector4(gui.get_color(recipebook).x, gui.get_color(recipebook).y, gui.get_color(recipebook).z, 1))
+  gui.set_color(rb_close, vmath.vector4(gui.get_color(rb_close).x, gui.get_color(rb_close).y, gui.get_color(rb_close).z, 1))
+  gui.set_position(rb_close, vmath.vector3(640, -50, 0))
+  gui.animate(rb_close, "position.y", 40, gui.EASING_OUTEXPO, 1.2, 0, nil, gui.PLAYBACK_ONCE_FORWARD)
+  menu_status["recipebook"] = true
+end
+
+function hide_recipebook()
+  gui.set_color(recipebook_bg, vmath.vector4(0, 0, 0, 0))
+  gui.set_color(recipebook, vmath.vector4(gui.get_color(recipebook).x, gui.get_color(recipebook).y, gui.get_color(recipebook).z, 0))
+  gui.set_color(rb_close, vmath.vector4(gui.get_color(rb_close).x, gui.get_color(rb_close).y, gui.get_color(rb_close).z, 0))
+  gui.set_color(mission_item_highlight, vmath.vector4(gui.get_color(mission_item_highlight).x, gui.get_color(mission_item_highlight).y, gui.get_color(mission_item_highlight).z, 0))
+  menu_status["recipebook"] = false
+end
+
+function on_input(self, action_id, action)
+  if not menu_status["recipebook"] then return end
+  if (action_id == hash("rightclick") or action_id == hash("leftclick")) and action.pressed then
+    -- 右矢印
+    if gui.pick_node(rb_arrows[1], action.x, action.y) then
+      if rb_page == math.ceil(#show_recipes / 5) then return end
+      rb_page = rb_page + 1
+      reload_rb()
+    -- 左矢印
+    elseif gui.pick_node(rb_arrows[2], action.x, action.y) then
+      if rb_page == 1 then return end
+      rb_page = rb_page - 1
+      reload_rb()
+    -- フィルターの表示をクリックしたときにフィルタークリア
+    elseif gui.pick_node(rb_filter, action.x, action.y) then
+      rb_filter_item = "none"
+      rb_page = 1
+      reload_rb()
+    elseif gui.pick_node(rb_close, action.x, action.y) then
+      hide_recipebook()
+    end
+
+    -- アイテム名や画像をクリックしたときにフィルターをかける
+    local i,j
+    -- 表示されているページの最大行数を取得
+    local max_line = 5 + (#show_recipes - (rb_page * 5))
+    if max_line >= 5 then
+      max_line = 5
+    end
+    for i = 1,max_line,1 do
+      for j = 1,3,1 do
+        -- クリックされた画像と同じ場所にあるレシピを英語に変換してフィルターをかける
+        if gui.pick_node(rb_item_pics[i][j], action.x, action.y) then
+          rb_filter_item = japanese_to_english(show_recipes[(rb_page - 1) * 5 + i][j])
+          rb_page = 1
+          reload_rb()
+          break
+        -- クリックされたアイテム名と同じ場所にあるレシピを英語に変換してフィルターをかける
+        elseif gui.pick_node(rb_item_names[i][j], action.x, action.y) then
+          rb_filter_item = japanese_to_english(show_recipes[(rb_page - 1) * 5 + i][j])
+          rb_page = 1
+          reload_rb()
+          break
+        end
+      end
+    end
+
+  end
+
+end
+
+function reload_rb()
+  -- ページ変更などでGUIを初期化する
+  local i,j,cnt=1,1,1
+  --表示するレシピを変数に格納
+  if rb_filter_item == "none" then
+    show_recipes = recipes
+  else
+    show_recipes = {}
+    for i = 1,#recipes,1 do
+      if recipes[i][1] == english_to_japanese(rb_filter_item) or recipes[i][2] == english_to_japanese(rb_filter_item) or recipes[i][3] == english_to_japanese(rb_filter_item)  then
+        show_recipes[cnt] = recipes[i]
+        cnt = cnt + 1
+      end
+    end
+  end
+  --Filterの表示
+  gui.play_flipbook(rb_filter,rb_filter_item)
+  if rb_page > math.ceil(#show_recipes / 5) then
+    --現page数と全page数が多かったら最大に
+    rb_page = math.ceil(#show_recipes / 5)
+  elseif rb_page == 0 and not(#show_recipes == 0)then
+    --見せるレシピが空でなく、ページ数が0のとき１ページ目に設定
+    rb_page = 1
+  end
+  --page表示 小数点以下切り下げ
+  if #show_recipes == 0 then
+    gui.set_text(rb_page_display, "(Page 0/0)")
+  else
+    gui.set_text(rb_page_display, "(Page "..tostring(rb_page).."/"..tostring(math.ceil(#show_recipes / 5))..")")
+  end
+
+  --ページによってボタンを非表示に
+  --右のボタン
+  if rb_page == math.ceil(#show_recipes / 5) then
+    gui.set_enabled(rb_arrows[1], false)
+  else
+    gui.set_enabled(rb_arrows[1], true)
+  end
+  --左のボタン
+  if rb_page == 1 then
+    gui.set_enabled(rb_arrows[2], false)
+  else
+    gui.set_enabled(rb_arrows[2], true)
+  end
+  if math.ceil(#show_recipes / 5) == 0 then
+    gui.set_enabled(rb_arrows[1], false)
+    gui.set_enabled(rb_arrows[2], false)
+  end
+
+  --表示列取得
+  local max_line = 5 + (#show_recipes - (rb_page * 5))
+  if max_line > 5 then
+    max_line = 5
+  elseif #show_recipes == 0 then
+    max_line = 0
+  end
+  local highlight_flag = false
+  for i = 1,5,1 do
+    if i <= max_line then
+      --表示列のとき
+      local law_number = (rb_page - 1) * 5 + i
+      gui.set_enabled(rb_lines[i], true)
+      --数字
+      gui.set_text(rb_item_numbers[i], tostring(law_number)..".")
+      for j = 1,3,1 do
+        --item name
+        gui.set_text(rb_item_names[i][j],show_recipes[law_number][j])
+        --item image
+        gui.play_flipbook(rb_item_pics[i][j],japanese_to_english(show_recipes[law_number][j]))
+
+      end
+      --highlight
+      if japanese_to_english(show_recipes[law_number][3]) == mission_item then
+        highlight_flag = true
+        gui.set_position(mission_item_highlight, vmath.vector3(1055, 600-(90*i), 1))
+      end
+    else
+      --非表示列
+      gui.set_enabled(rb_lines[i], false)
+    end
+  end -- for end
+  if highlight_flag then
+    gui.set_color(mission_item_highlight, vmath.vector4(gui.get_color(mission_item_highlight).x, gui.get_color(mission_item_highlight).y, gui.get_color(mission_item_highlight).z, 1))
+  else
+    gui.set_color(mission_item_highlight, vmath.vector4(gui.get_color(mission_item_highlight).x, gui.get_color(mission_item_highlight).y, gui.get_color(mission_item_highlight).z, 0))
+  end
+end

@@ -1,0 +1,51 @@
+images {
+  image: "/main/assets/gui/images/menubutton.png"
+}
+images {
+  image: "/main/assets/gui/images/glowing black.png"
+}
+images {
+  image: "/main/assets/gui/images/glowing red.png"
+}
+images {
+  image: "/main/assets/gui/images/arrow_left.png"
+}
+images {
+  image: "/main/assets/gui/images/arrow_right.png"
+}
+images {
+  image: "/main/assets/gui/images/book.png"
+}
+images {
+  image: "/main/assets/gui/images/btn03_01_dark.png"
+}
+images {
+  image: "/main/assets/gui/images/btn03_01_light.png"
+}
+images {
+  image: "/main/assets/gui/images/keybind.png"
+}
+images {
+  image: "/main/assets/gui/images/title.png"
+}
+images {
+  image: "/main/assets/gui/images/icon.png"
+}
+images {
+  image: "/main/assets/gui/images/map.png"
+}
+images {
+  image: "/main/assets/gui/images/pin.png"
+}
+images {
+  image: "/main/assets/gui/images/WECraft.png"
+}
+images {
+  image: "/main/assets/gui/images/highlight_red.png"
+}
+images {
+  image: "/main/assets/gui/images/highlight_blue.png"
+}
+margin: 2
+extrude_borders: 0
+inner_padding: 0

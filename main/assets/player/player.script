@@ -1,0 +1,151 @@
+function init(self)
+  msg.post(".", "acquire_input_focus")
+  self.input = vmath.vector3()
+  self.dir = vmath.vector3(0,0,0)
+  self.moving = false
+  self.facing = false
+  self.animationname = {false, true} -- t:動いている ,f:止まっている // t:右 ,f:左
+  self.playsound = false
+  -- 初回起動時
+  if first_start then speed = 150 end
+  -- swift使用後はもどす　
+  if speed == 300 then speed = 150 end
+end
+
+function final(self)
+  msg.post(".", "release_input_focus")
+end
+
+function update(self, dt)
+    if check_gui()then
+      -- アニメーションリセット
+      if self.animationname[1] or (not self.animationname[2] == self.facing) then
+        msg.post("#player", "play_animation", { id = hash("idle") })
+        self.animationname[1] = false
+        self.animationname[2] = self.facing
+      end
+
+      --SEが流れている時にとめる
+      if self.playsound then
+        sound.stop("#sound")
+        self.playsound = false
+      end
+      return
+    end
+
+  --動いてるとき
+  if self.moving then
+    --動いていてない または 向いている方向か違うとき
+    if self.animationname[1] == false or (not self.animationname[2] == self.facing) then
+      msg.post("#player", "play_animation", { id = hash("walk") })
+      sprite.set_hflip("#player", self.facing)
+      self.animationname[1] = true
+      self.animationname[2] = self.facing
+    end
+    --SEが止まっている時
+    if not self.playsound and gamestatus then
+      sound.play("#sound")
+      self.playsound = true
+    end
+  end
+  -------------
+  --止まってるとき
+  if not self.moving then
+    if self.animationname[1] or (not self.animationname[2] == self.facing) then
+      msg.post("#player", "play_animation", { id = hash("idle") })
+      self.animationname[1] = false
+      self.animationname[2] = self.facing
+    end
+    --SEが流れている時
+    if self.playsound then
+      sound.stop("#sound")
+      self.playsound = false
+    end
+  end
+  -------------
+
+
+  --movement
+  if self.moving then
+    local pos = go.get_position()
+    pos = pos + self.dir * speed * dt
+    go.set_position(pos)
+  end
+
+  self.input = vmath.vector3(0, 0, 0)
+  self.moving = false
+end
+
+function on_input(self, action_id, action)
+  if action_id == hash("up") then
+    self.input.y = 1
+  elseif action_id == hash("down") then
+    self.input.y = -1
+  elseif action_id == hash("right") then
+    self.facing = false
+    self.input.x = 1
+  elseif action_id == hash("left") then
+    self.facing = true
+    self.input.x = -1
+  elseif action_id == hash("menu") then
+    if action.pressed then
+      if menu_status["menu_open"] then
+        msg.post("gui", "hide_menu")
+      else
+        msg.post("gui", "show_menu")
+      end
+    end
+  elseif action_id == hash("recipe") then
+    if action.pressed then
+      if menu_status["recipebook"] then
+        msg.post("gui", "hide_recipebook")
+      else
+        msg.post("gui", "show_recipebook")
+      end
+    end
+  end
+  --移動距離を等しく調整
+  self.dir = vmath.normalize(self.input)
+  if vmath.length(self.input) > 0 then
+    self.moving = true
+  end
+end
+
+function on_message(self, message_id, message, sender)
+  if message_id == hash("contact_point_response") then
+    --壁とかに当たったら止まる
+    if message.group == hash("walls") or message.group == hash("resources") or message.group == hash("fixing") then
+      go.set_position(go.get_position() + message.normal * message.distance)
+    end
+  elseif message_id == hash("trigger_response") and message.group == hash("cursor") then
+    --カーソルとプレイヤーの衝突管理
+    collision_manage[hash("/player")] = message.enter
+
+  elseif message_id == hash("player_tp") then
+    go.set_position(vmath.vector3(message.x, message.y, 1))
+
+  elseif message_id == hash("player_flip") then
+    if self.facing then
+      self.facing = false
+    else
+      self.facing = true
+    end
+    self.animationname[2] = self.facing
+    sprite.set_hflip("#player", self.facing)
+
+  elseif message_id == hash("player_death") then
+    --死んだとき
+    player_exist = false
+    msg.post("gui", "show_dead", {message = message.text})
+    msg.post("camera", "disable")
+    sound.stop("#sound")
+    set_having_item_name("none")
+    go.delete()
+
+  elseif message_id == hash("tutorial") then
+    go.set_position(vmath.vector3(-3700,2150,0) )
+
+  elseif message_id == hash("change_speed") then
+    speed = message.amount
+  end
+end

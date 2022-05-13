@@ -1,0 +1,238 @@
+require "main.assets.common"
+
+local istool = false
+
+function init(self)
+  --初期設定
+  self.action = {}
+  self.action[hash("rightclick")] = false
+  self.action[hash("leftclick")] = false
+  collision_manage[go.get_id()] = false
+  self.playsound = false
+  self.isburning = false
+  self.isburningcheck = false
+  self.item_dt_count = 200
+end
+
+function final(self)
+  collision_manage[go.get_id()] = false
+  if get_items_id_to_type(hype_brackets(go.get_id())) == "burning_furnace" then
+    sound.stop("#sound")
+    self.playsound = false
+  end
+end
+
+function on_message(self, message_id, message, sender)
+  --enter exit check
+  if message_id == hash("trigger_response") and message.group == hash("cursor") then
+    collision_manage[go.get_id()] = message.enter
+    -- inputを取得できるのは16オブジェクトまでなので、衝突している時のみinputを取得する
+    if message.enter then
+      msg.post(".","acquire_input_focus")
+    else
+      istool = false
+      msg.post(".","release_input_focus")
+    end
+  elseif message_id == hash("collision_response") then
+    --衝突したとき
+    if message.group == hash("cursor") and self.action[hash("rightclick")] and (not check_gui()) and mission_cleared and get_items_id_to_type(hype_brackets(go.get_id())) == "completeitem" then
+      -- ミッションクリア済み -> ゲームクリアへ
+      msg.post("gui", "show_clear")
+    elseif message.group == hash("cursor") and self.action[hash("leftclick")] and (not (check_gui()))then
+      -- アイテム名表示
+      if get_items_id_to_type(hype_brackets(go.get_id())) == "completeitem" then
+        if mission_cleared then
+          -- ミッションクリア済み -> ゲームクリアへ
+          msg.post("gui", "show_clear")
+        else
+          -- ミッション未達成
+          msg.post("gui", "set_item_name", {text = english_to_japanese(get_items_id_to_type(hype_brackets(go.get_id()))).." ("..english_to_japanese(mission_item) .."を作成してください)"})
+        end
+      elseif get_items_id_to_type(hype_brackets(go.get_id())) ==  "swift" then
+        msg.post("player", "change_speed", {amount = 300})
+        msg.post("gui", "delete_having_item")
+        msg.post("gui", "set_item_name", {text = "俊足で走る速さが変わった!!(おなかが減りやすくなった)"})
+        food_reduce_period = 3
+        go.delete()
+      else
+        msg.post("gui", "set_item_name", {text = english_to_japanese(get_items_id_to_type(hype_brackets(go.get_id())))})
+      end
+    end
+  elseif message.group == hash("items") and message_id == hash("contact_point_response") then
+    go.set_position(go.get_position() + message.normal * message.distance)
+  end
+end
+
+function on_input(self, action_id, action)
+  -- 入力情報の管理
+  if action_id == hash("rightclick") or action_id == hash("leftclick") then
+    if action.pressed then
+      self.action[action_id] = true
+    else
+      self.action[action_id] = false
+    end
+    --mission complete
+     if get_items_id_to_type(hype_brackets(go.get_id())) == "completeitem" and mission_cleared and action.pressed and collision_manage[go.get_id()] and not check_gui()then
+       msg.post("gui", "show_clear")
+     end
+  end
+
+  if action_id == hash("rightclick") and action.pressed and get_gui_sprite() and collision_manage[go.get_id()] then
+    -- クラフト管理
+    if not player_exist then return end
+    --resource
+    if opponent_other_group == hash("resources") and check_tool(having_item_name) then
+      msg.post("gui", "set_item_name", {text = "道具を置いてください。"})
+    end
+    if opponent_other_group == hash("resources") or opponent_other_group == hash("walls") or opponent_object_id == "none" then
+        return
+    end
+
+    --GUIが出てるとき
+    if check_gui() then return end
+
+    --GUIの上ではクラフトしない
+    if go.get_position().y > get_camera_position().y - 63 then
+      return
+    end
+    --craft
+    set_having_item_name(get_items_id_to_type(hype_brackets(go.get_id())))
+    --道具系の処理1
+    if check_tool(having_item_name) then
+         istool = true
+         tool_name = having_item_name
+    elseif check_tool(having_item_name_old) then
+         istool = true
+         tool_name = having_item_name_old
+    end
+    --クラフトアイテム取得
+    local product = get_finished_item(having_item_name, having_item_name_old)
+    --かまどのアイテム
+    if product == "iron" or
+      product == "baked_apple" or
+      product == "baked_mushroom" or
+      product == "glass" or
+      product == "paper" or
+      product == "iron_rod" then
+      --random
+      local rnd = math.random(0,1000)
+      if rnd < 200 then
+        set_items_id_to_type((factory.create("#factory",go.get_position())), "furnace")
+        go.delete()
+      end
+      set_having_item_name(product)
+      set_gui_sprite(false)
+      msg.post("gui", "set_having_item")
+      if not mission_cleared and product == mission_item then
+        if difficulty == 5 then
+          --impossible
+          mission_item_cleared = mission_item_cleared + 1
+          mission_item = mission_item_list[4][mission_item_cleared]
+          msg.post("gui", "set_item_name", {text = "目的のアイテムは「"..english_to_japanese(mission_item).."」になりました！"})
+        else
+          mission_cleared = true
+        end
+      end
+      return
+    end
+
+    -- クラフト
+    if not (product == "error") then
+      -- mission
+      if (not mission_cleared) and product == mission_item then
+        if difficulty == 5 then
+          --impossible
+          if mission_item_cleared == #mission_item_list[4] then
+            mission_cleared = true
+          else
+            mission_item_cleared = mission_item_cleared + 1
+            mission_item = mission_item_list[4][mission_item_cleared]
+            msg.post("gui", "set_item_name", {text = "目的のアイテムは「"..english_to_japanese(mission_item).."」になりました！"})
+          end
+        else
+          mission_cleared = true
+        end
+      end
+
+
+      if product == "swift" then
+        msg.post("player", "change_speed", {amount = 300})
+        msg.post("gui", "set_item_name", {text = "俊足で走る速さが変わった!!(おなかが減りやすくなった)"})
+        food_reduce_period = 3
+        msg.post("gui", "delete_having_item")
+      else
+        craft_item_position = go.get_position()
+        set_having_item_name(product)
+        msg.post("gui", "set_having_item")
+        msg.post("cursor", "place_item")
+        if product == "cat_tomb" then
+          msg.post("player", "player_death", {text = "墓に埋葬された"})
+        end
+      end
+      go.delete()
+
+      --道具系の処理2 1フレーム後にアイテムを返す
+      if istool then
+        istool = false
+        local rnd = math.random(0, 100)
+        if rnd < 80 then --8割
+          --帰ってくる処理を[update function]にて
+          self.item_dt_count = 0
+        else
+          msg.post("cursor", "play_break")
+          msg.post("gui", "set_item_name", {text = english_to_japanese(tool_name).."が壊れた!"})
+        end
+      end
+
+    else
+      set_having_item_name(having_item_name_old)
+      istool = false
+    end
+
+    self.action[action_id] = false
+  end
+
+end
+
+function update(self, dt)
+  -- 道具を返す処理
+  self.item_dt_count = self.item_dt_count + 1
+  if self.item_dt_count == 1 then
+      set_having_item_name(tool_name)
+      msg.post("gui", "set_having_item")
+      tool_name = "none"
+      go.delete()
+  end
+
+  --かまどだったとき
+  if self.item_dt_count % 10 == 0 and (not self.isburningcheck) then
+    if get_items_id_to_type(hype_brackets(go.get_id())) == "burning_furnace" then
+      self.isburning = true
+    else
+      self.isburning = false
+    end
+    self.isburningcheck = true
+  end
+  --燃焼かまどSE
+  if gamestatus and self.isburning then
+    local distance_from_player = vmath.length(go.get_position(go.get_id()) - go.get_position(go.get_id("/player")))
+    --距離が遠い時
+    if distance_from_player > 300 then
+      --SEが流れている時
+      if self.playsound then
+        sound.stop("#sound")
+        self.playsound = false
+      end
+    end
+    --距離が近いとき
+    if distance_from_player <= 300 then
+      --SEが流れていない時
+      if not self.playsound then
+        sound.play("#sound")
+        self.playsound = true
+      end
+      --音量調節
+      sound.set_gain("#sound", (300-distance_from_player)/300)
+    end
+  end
+end

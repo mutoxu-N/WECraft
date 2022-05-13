@@ -1,0 +1,224 @@
+cursor_count_dt = 10
+
+function init(self)
+  msg.post(".", "acquire_input_focus")
+  self.mousex = 0
+  self.mousey = 0
+  opponent_object_name = "none"
+  opponent_object_id = "none"
+  opponent_other_group = "none"
+  craft_item_position = vmath.vector3(0, 0, 0)
+end
+
+function final(self)
+  msg.post(".","release_input_focus")
+end
+
+function on_message(self, message_id, message, sender)
+  if message_id == hash("place_item") then
+    place_item()
+  elseif message_id == hash("collision_response") then
+    opponent_other_group = message.other_group
+    opponent_object_id = message.other_id
+    opponent_object_name = get_items_id_to_type(hype_brackets(opponent_object_id))
+  elseif message_id == hash("play_break") then
+    sound.play("#break")
+  end
+
+end
+
+function on_input(self, action_id, action)
+  math.randomseed(os.time()*os.clock())
+  if action_id == hash("rightclick") and action.pressed then
+    --右クリック+押されたとき
+    if get_gui_sprite() and (not collision_manage[opponent_object_id] or opponent_object_id == hash("/player"))then
+      --アイテムを持っていて衝突していないとき
+      place_item()
+    end
+
+    if (not get_gui_sprite()) then
+      --アイテムを持っていないとき
+      have_item()
+    end
+  end
+end
+
+function place_item()
+  if check_gui() then
+    if not menu_status["cheat"] then
+      return
+    end
+  end
+
+  --GUIの上にはおかない
+  if go.get_position().y > get_camera_position().y - 63 then
+    return
+  end
+
+  --foods
+  local food_flag = false
+  if collision_manage[hash("/player")] then
+    if food_amount < max_food then
+      if having_item_name == "acorn" then
+        msg.post("gui", "add_food", {amount = 2})
+        msg.post("gui", "set_item_name", {text = "どんぐりを食べて体力が回復した！"})
+        food_flag = true
+      elseif having_item_name == "apple" then
+        msg.post("gui", "add_food", {amount = 8})
+        msg.post("gui", "set_item_name", {text = "りんごを食べて体力が回復した！"})
+        food_flag = true
+      elseif having_item_name == "bambooshoots" then
+        msg.post("gui", "add_food", {amount = 5})
+        msg.post("gui", "set_item_name", {text = "たけのこを食べて体力が回復した！"})
+        food_flag = true
+      elseif having_item_name == "wildplant" then
+        msg.post("gui", "add_food", {amount = 3})
+        msg.post("gui", "set_item_name", {text = "山菜を食べて体力が回復した！"})
+        food_flag = true
+      elseif having_item_name == "baked_mushroom" then
+        msg.post("gui", "add_food", {amount = 8})
+        msg.post("gui", "set_item_name", {text = "焼きキノコを食べて体力が回復した！"})
+        food_flag = true
+      elseif having_item_name == "baked_apple" then
+        local rnd = math.random(0, 100)
+        if rnd > 20 then
+          msg.post("gui", "add_food", {amount = 20})
+          msg.post("gui", "set_item_name", {text = "焼きリンゴを食べて体力が回復した！"})
+          food_flag = true
+        else
+          msg.post("player", "player_death", {text="焼きリンゴが熱すぎてやけどした"})
+          food_flag = true
+        end --if having_item_name == "acorn" then
+      end --if food_amount < 20 then
+    else
+      msg.post("gui", "set_item_name", {text = "おなかがいっぱいだ"})
+      return
+    end
+
+    if food_flag then
+        food_flag = false
+        msg.post("gui", "delete_having_item")
+        set_having_item_name("none")
+        return
+    end
+  end
+
+  -- アイテムを設置する
+  local placed_id = ""
+  if vmath.length(craft_item_position) == 0 then
+    placed_id = factory.create("#factory")
+  else
+    placed_id = factory.create("#factory", craft_item_position)
+    craft_item_position = vmath.vector3(0, 0, 0)
+  end
+
+  set_items_id_to_type(placed_id, having_item_name)
+  collision_manage[placed_id] = true
+  msg.post("gui", "delete_having_item")
+  set_having_item_name("none")
+end
+
+function have_item()
+  if check_gui() or tutorialflag or opponent_other_group == hash("player") then return end
+
+  --GUIの上は持たない
+  if go.get_position().y > get_camera_position().y - 63 then
+    return
+  end
+
+  if collision_manage[opponent_object_id] then
+    --randomthen
+    local rnd = math.random(0,1000)
+    --resources
+    if opponent_other_group == hash("resources") then
+      --tree
+      if get_items_id_to_type(hype_brackets(opponent_object_id)) == "tree" then
+        --チュートリアルだったとき
+        if not tutorialstatus then
+          if rnd >900 then
+            set_having_item_name("apple")
+            resource_name = "apple"
+          elseif  rnd > 750 then
+            set_having_item_name("acorn")
+            resource_name = "acorn"
+          else
+            set_having_item_name("stick")
+            resource_name = "stick"
+          end
+        else
+          set_having_item_name("stick")
+          resource_name = "stick"
+        end
+        --乱数再生成
+        rnd = math.random(0,1000)
+        msg.post("gui","set_having_item")
+        if rnd < 350 then --350
+          cursor_count_dt = 0
+          set_having_item_name("trunk")
+          craft_item_position = go.get_position(opponent_object_id)
+          place_item()
+          go.delete(opponent_object_id)
+          collision_manage[opponent_object_id] = false
+        end
+      end
+
+      --opened_coal_mountain
+      if get_items_id_to_type(hype_brackets(opponent_object_id)) == "opened_coal_mountain" then
+        set_having_item_name("coal")
+        msg.post("gui","set_having_item")
+        if rnd < 150 then --150
+          go.delete(opponent_object_id)
+          collision_manage[opponent_object_id] = false
+        end
+      end
+
+      --opened_iron_mountain
+      if get_items_id_to_type(hype_brackets(opponent_object_id)) == "opened_iron_mountain" then
+        set_having_item_name("iron_ore")
+        msg.post("gui","set_having_item")
+        if rnd < 250 then --250
+          go.delete(opponent_object_id)
+          collision_manage[opponent_object_id] = false
+        end
+      end
+
+      --broken_mountain
+      if get_items_id_to_type(hype_brackets(opponent_object_id)) == "broken_mountain" then
+
+        if (not mission_cleared) and mission_item == "sand" then
+          mission_cleared = true
+        end
+        set_having_item_name("sand")
+        msg.post("gui","set_having_item")
+        if rnd < 150 then --250
+          go.delete(opponent_object_id)
+          collision_manage[opponent_object_id] = false
+        end
+      end
+
+      return
+    end
+
+    --持てないものは無視する
+    if opponent_other_group == hash("fixing") or opponent_object_name == "player" then
+      return
+    end
+
+    --have
+    set_having_item_name(get_items_id_to_type(hype_brackets(opponent_object_id)))
+    msg.post("gui", "set_having_item")
+    msg.post("gui", "set_item_name", {text = ""})
+    collision_manage[opponent_object_id] = false
+    go.delete(opponent_object_id)
+  end
+end
+
+function update(self, dt)
+  -- 資源入手時にアイテムを持たせる
+  cursor_count_dt = cursor_count_dt + 1
+  if cursor_count_dt == 1 then
+    set_having_item_name(resource_name)
+    msg.post("gui", "set_having_item")
+  end
+  math.randomseed(os.clock()*os.time()*5)
+end

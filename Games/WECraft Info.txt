@@ -1,0 +1,9 @@
+OHOLというゲームのパロディーとして作成しました。
+
+-----------------------------------------------------------
+Game Name : WECraft
+Version   : 1.0.0
+Author    : mutoxu=N
+WEB       : http://jakuden.thyme.jp/wec/ 
+Twitter   : @TohoWEC (https://twitter.com/TohoWEC) 
+-----------------------------------------------------------

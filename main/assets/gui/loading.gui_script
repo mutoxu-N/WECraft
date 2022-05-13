@@ -1,0 +1,11 @@
+function init(self)
+  loading = gui.get_node("loading")
+end
+
+function on_message(self, message_id, message, sender)
+  if message_id == hash("hide") then
+    gui.set_color(loading, vmath.vector4(gui.get_color(loading).x, gui.get_color(loading).y, gui.get_color(loading).z, 0))
+  elseif message_id == hash("show") then
+    gui.set_color(loading, vmath.vector4(gui.get_color(loading).x, gui.get_color(loading).y, gui.get_color(loading).z, 1))
+  end
+end

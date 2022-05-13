@@ -1,0 +1,36 @@
+-- unload のフラグproxy再読み込みするか否か
+local flag = false
+
+function init(self)
+  first_start = true
+  msg.post("#game", "load")
+  msg.post("#game", "acquire_input_focus")
+end
+
+function on_message(self, message_id, message, sender)
+  if message_id == hash("proxy_loaded") then
+    --proxyがロードされた後
+    msg.post("#game", "init")
+    msg.post("#game", "enable")
+    msg.post("#loading", "hide")
+
+  elseif message_id == hash("proxy_unloaded") then
+    if not flag then
+      msg.post("#game", "load")
+    else
+      msg.post("@system:", "exit", {code=0})
+    end
+  elseif message_id == hash("reboot") then
+    unload()
+  elseif message_id == hash("quit") then
+    flag = true
+    unload()
+  end
+end
+
+function unload()
+  msg.post("#loading", "show")
+  msg.post("#game", "disable")
+  msg.post("#game", "final")
+  msg.post("#game", "unload")
+  end

@@ -1,0 +1,16 @@
+function init(self)
+  -- items_id_typeに設定
+  set_items_id_to_type(hype_brackets(go.get_id()), "item_manager")
+  -- 自分と同じ座標にアイテムを生成する
+  local pos = go.get_position()
+  pos = vmath.vector3(pos.x,pos.y,0)
+  go.set_position(pos)
+  if not is_exists(have_item_name) then
+    set_items_id_to_type((factory.create("#"..having_item_name, go.get_position())), having_item_name)
+    set_having_item_name("none")
+    go.delete()
+  else
+    print(have_item_name)
+    print("item_manager_error")
+  end
+end

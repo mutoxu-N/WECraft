@@ -1,0 +1,270 @@
+images {
+  image: "/main/assets/items/images/hemp.png"
+}
+images {
+  image: "/main/assets/items/none.png"
+}
+images {
+  image: "/main/assets/items/images/axe.png"
+}
+images {
+  image: "/main/assets/items/images/hammer.png"
+}
+images {
+  image: "/main/assets/items/images/iron_ore.png"
+}
+images {
+  image: "/main/assets/items/images/knife.png"
+}
+images {
+  image: "/main/assets/items/images/rope.png"
+}
+images {
+  image: "/main/assets/items/images/stick.png"
+}
+images {
+  image: "/main/assets/items/images/stone.png"
+}
+images {
+  image: "/main/assets/items/images/tomb.png"
+}
+images {
+  image: "/main/assets/items/images/tree.png"
+}
+images {
+  image: "/main/assets/items/images/chest.png"
+}
+images {
+  image: "/main/assets/items/images/coal.png"
+}
+images {
+  image: "/main/assets/items/images/trunk.png"
+}
+images {
+  image: "/main/assets/items/images/iron.png"
+}
+images {
+  image: "/main/assets/items/images/coalmountain.png"
+}
+images {
+  image: "/main/assets/items/images/ironmountain.png"
+}
+images {
+  image: "/main/assets/items/images/opened_coal_mountain.png"
+}
+images {
+  image: "/main/assets/items/images/opened_iron_mountain.png"
+}
+images {
+  image: "/main/assets/items/images/plank.png"
+}
+images {
+  image: "/main/assets/items/images/origin_axe.png"
+}
+images {
+  image: "/main/assets/items/images/origin_pickaxe.png"
+}
+images {
+  image: "/main/assets/items/images/handle.png"
+}
+images {
+  image: "/main/assets/items/images/pickaxe.png"
+}
+images {
+  image: "/main/assets/items/images/workpiece.png"
+}
+images {
+  image: "/main/assets/items/images/furnace.png"
+}
+images {
+  image: "/main/assets/items/images/burning_furnace.png"
+}
+images {
+  image: "/main/assets/items/images/awl.png"
+}
+images {
+  image: "/main/assets/items/images/foundation.png"
+}
+images {
+  image: "/main/assets/items/images/blade.png"
+}
+images {
+  image: "/main/assets/items/images/screw.png"
+}
+images {
+  image: "/main/assets/items/images/tombstone.png"
+}
+images {
+  image: "/main/assets/items/images/origin_furnace.png"
+}
+images {
+  image: "/main/assets/items/images/acorn.png"
+}
+images {
+  image: "/main/assets/items/images/apple.png"
+}
+images {
+  image: "/main/assets/items/images/bambooshoots.png"
+}
+images {
+  image: "/main/assets/items/images/wildplant.png"
+}
+images {
+  image: "/main/assets/items/images/baked_apple.png"
+}
+images {
+  image: "/main/assets/items/images/quartz.png"
+}
+images {
+  image: "/main/assets/items/images/flint.png"
+}
+images {
+  image: "/main/assets/items/images/coal_furnace.png"
+}
+images {
+  image: "/main/assets/items/images/mushroom.png"
+}
+images {
+  image: "/main/assets/items/images/baked_mushroom.png"
+}
+images {
+  image: "/main/assets/items/images/camellia.png"
+}
+images {
+  image: "/main/assets/items/images/chrysanthemum.png"
+}
+images {
+  image: "/main/assets/items/images/dahilia.png"
+}
+images {
+  image: "/main/assets/items/images/daisy.png"
+}
+images {
+  image: "/main/assets/items/images/freesia.png"
+}
+images {
+  image: "/main/assets/items/images/gentian.png"
+}
+images {
+  image: "/main/assets/items/images/red_dye.png"
+}
+images {
+  image: "/main/assets/items/images/blue_dye.png"
+}
+images {
+  image: "/main/assets/items/images/pink_dye.png"
+}
+images {
+  image: "/main/assets/items/images/white_dye.png"
+}
+images {
+  image: "/main/assets/items/images/purple_dye.png"
+}
+images {
+  image: "/main/assets/items/images/yellow_dye.png"
+}
+images {
+  image: "/main/assets/items/images/mixed_dye1.png"
+}
+images {
+  image: "/main/assets/items/images/mixed_dye2.png"
+}
+images {
+  image: "/main/assets/items/images/mixed_dye3.png"
+}
+images {
+  image: "/main/assets/items/images/mixed_dye4.png"
+}
+images {
+  image: "/main/assets/items/images/mixed_dye5.png"
+}
+images {
+  image: "/main/assets/items/images/shovel.png"
+}
+images {
+  image: "/main/assets/items/images/origin_shovel.png"
+}
+images {
+  image: "/main/assets/items/images/rounded_stone.png"
+}
+images {
+  image: "/main/assets/items/images/sand.png"
+}
+images {
+  image: "/main/assets/items/images/sandmountain.png"
+}
+images {
+  image: "/main/assets/items/images/broken_mountain.png"
+}
+images {
+  image: "/main/assets/items/images/glass.png"
+}
+images {
+  image: "/main/assets/items/images/stained_glass.png"
+}
+images {
+  image: "/main/assets/items/images/iron_plate.png"
+}
+images {
+  image: "/main/assets/items/images/iron_rod.png"
+}
+images {
+  image: "/main/assets/items/images/cotton.png"
+}
+images {
+  image: "/main/assets/items/images/cottonflower.png"
+}
+images {
+  image: "/main/assets/items/images/sharp_stick.png"
+}
+images {
+  image: "/main/assets/items/images/string.png"
+}
+images {
+  image: "/main/assets/items/images/loom.png"
+}
+images {
+  image: "/main/assets/items/images/shirt.png"
+}
+images {
+  image: "/main/assets/items/images/log.png"
+}
+images {
+  image: "/main/assets/items/images/paper.png"
+}
+images {
+  image: "/main/assets/items/images/bark.png"
+}
+images {
+  image: "/main/assets/items/images/colored_shirt.png"
+}
+images {
+  image: "/main/assets/items/images/pulp.png"
+}
+images {
+  image: "/main/assets/items/images/gear.png"
+}
+images {
+  image: "/main/assets/items/images/gear_screw.png"
+}
+images {
+  image: "/main/assets/items/images/clock.png"
+}
+images {
+  image: "/main/assets/items/images/completeitem.png"
+}
+images {
+  image: "/main/assets/items/images/swift.png"
+}
+images {
+  image: "/main/assets/items/images/hand.png"
+}
+images {
+  image: "/main/assets/items/images/cat_tomb.png"
+}
+images {
+  image: "/main/assets/items/images/origin_awl.png"
+}
+margin: 2
+extrude_borders: 0
+inner_padding: 0

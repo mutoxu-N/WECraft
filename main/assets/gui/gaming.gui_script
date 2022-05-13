@@ -1,0 +1,136 @@
+tutorialflag = false
+
+function init(self)
+  -- 管理用変数設定
+  food_gage = gui.get_node(hash("food_gage")) --四角のゲージ
+  food_meter = gui.get_node(hash("food_meter")) --メーターの文字
+  item_name_display = gui.get_node(hash("item_name_display")) --display
+  having_item_display = gui.get_node(hash("having_item_display")) --display
+  difficulty_display = gui.get_node(hash("difficulty_display")) --display
+  sprite_viewer = gui.get_node(hash("sprite_viewer")) --image
+  gui.set_text(having_item_display, "なし")
+  sec_counter = 0
+  player_exist = true
+  if first_start then
+    -- 初回起動時
+    food_amount = 15 --初期体力 15
+    max_food = 20
+    food_reduce_period = 5 -- 秒 5
+  else
+    --食料ゲージ(減る速さは継承)
+    if max_food == 20 then
+      -- チート使用していないとき
+      food_amount = 15
+    else
+      -- チート使用している時はゲージmax
+      food_amount = max_food
+    end
+  end
+  food_gage_update()
+  gui.set_enabled(gui.get_node("background"), false)
+end
+
+
+function update(self, dt)
+  if not gamestatus or tutorialstatus then return end
+  if not check_gui() then
+    -- GUIが表示されていないときおなかを五秒ごとに減らす
+
+    sec_counter = sec_counter + dt
+    if sec_counter > food_reduce_period then
+      msg.post(".", "reduce_food")
+      sec_counter = 0
+    end
+  end
+end
+
+function on_message(self, message_id, message, sender)
+  -- 体力回復
+  if message_id == hash("add_food") then
+    if food_amount < max_food then
+      if food_amount < max_food - message.amount then
+        food_amount = food_amount + message.amount
+      else
+        food_amount = max_food
+      end
+      sec_counter = 0
+      food_gage_update()
+    end
+  -- 体力減少
+  elseif message_id == hash("reduce_food") then
+    if food_amount > 1 then
+      food_amount = food_amount - 1
+      food_gage_update()
+
+    elseif food_amount == 1 and player_exist then
+      food_amount = food_amount - 1
+      food_gage_update()
+    end
+
+  --食料ゲージをアップデート
+elseif message_id == hash("food_gage_update") then
+    food_gage_update()
+  --ゲーム開始時に表示
+  elseif message_id == hash("gamestart") then
+    gui.set_enabled(gui.get_node("background"), true)
+    gui.set_text(difficulty_display, "難易度: "..difficulty_names[difficulty])
+    if difficulty == 6 then
+      tutorialflag = true
+      food_gage_update()
+      msg.post(".", "set_item_name")
+      msg.post(".", "set_having_item")
+    end
+  elseif message_id == hash("remove_tutorial_block") then
+      tutorialflag = false
+      food_gage_update()
+      set_having_item_name("none")
+      msg.post("gui", "set_item_name", {text = "遊び方でのスピードは通常より早くなっています"})
+      msg.post(".", "set_having_item")
+  -- GUIに持っているアイテムを表示
+  elseif message_id == hash("set_having_item") and player_exist and (not gui_sprite) then
+    if tutorialflag then
+      gui.set_text(having_item_display, "アイテム名")
+    else
+      gui.play_flipbook(sprite_viewer, having_item_name)
+      if having_item_name == "none" then
+        set_gui_sprite(false)
+        gui.set_text(having_item_display, "なし")
+      else
+        set_gui_sprite(true)
+        gui.set_text(having_item_display, english_to_japanese(having_item_name))
+      end
+    end
+  -- GUIに表示されているアイテムを削除
+  elseif message_id == hash("delete_having_item") and player_exist and gui_sprite then
+    gui.play_flipbook(sprite_viewer, "none")
+    gui.set_text(having_item_display, "なし")
+    set_having_item_name("none")
+    set_gui_sprite(false)
+  -- GUI非表示
+  elseif message_id == hash("hide") then
+  gui.set_enabled(gui.get_node("background"), false)
+  -- アイテム名が表示される場所に設定
+  elseif message_id == hash("set_item_name") then
+    if tutorialflag then
+      gui.set_text(item_name_display, "ここにはメッセージが表示されます")
+    else
+      gui.set_text(item_name_display, message.text)
+    end
+  end
+end
+
+function food_gage_update()
+  -- 体力バーの長さを計算して表示
+  gui.animate(food_gage, "size.x", 800*(food_amount/max_food), gui.EASING_OUTCUBIC, 0.2, 0, anim, gui.PLAYBACK_ONCE_FORWARD)
+  if tutorialflag then
+    gui.set_text(food_meter, "オレンジの■は食料ゲージです")
+  else
+    gui.set_text(food_meter, food_amount .. "/"..tostring(max_food))
+  end
+end
+
+function anim(self, node)
+  if food_amount == 0 then
+    msg.post("player", "player_death", {text = "餓死した"})
+  end
+end

@@ -1,0 +1,69 @@
+--propertys
+go.property("type", 0)
+go.property("image", hash("none"))
+
+function init(self)
+  if self.type == 0 then
+    self.isChange = false
+    sprite.play_flipbook("#sprite", self.image)
+  else
+    self.isChange = true
+    if self.type == 1 then self.image_name = "tutorial_wasd"
+    elseif self.type == 2 then self.image_name = "tutorial_have-place"
+    elseif self.type == 3 then self.image_name = "tutorial_craft-related"
+    elseif self.type == 4 then self.image_name = "tutorial_craft"
+    elseif self.type == 5 then self.image_name = "tutorial_craft2"
+    elseif self.type == 6 then self.image_name = "tutorial_cant-get"
+    elseif self.type == 7 then self.image_name = "tutorial_resource"
+    elseif self.type == 8 then self.image_name = "tutorial_furnace"
+    elseif self.type == 9 then self.image_name = "tutorial_burn-out"
+    elseif self.type == 10 then self.image_name = "tutorial_not-break"
+    elseif self.type == 11 then self.image_name = "tutorial_cant-carry"
+    elseif self.type == 12 then self.image_name = "tutorial_recipebook-related"
+    elseif self.type == 13 then self.image_name = "tutorial_open-recipebook"
+    elseif self.type == 14 then self.image_name = "tutorial_click-filter"
+    elseif self.type == 15 then self.image_name = "tutorial_having-filter"
+    elseif self.type == 16 then self.image_name = "tutorial_food-related"
+    elseif self.type == 17 then self.image_name = "tutorial_food"
+    elseif self.type == 18 then self.image_name = "tutorial_food-amount"
+    elseif self.type == 19 then self.image_name = "tutorial_food-reduce"
+    elseif self.type == 20 then self.image_name = "tutorial_food-tutorial"
+    elseif self.type == 21 then self.image_name = "tutorial_food-zero"
+    elseif self.type == 22 then self.image_name = "tutorial_system-related"
+    elseif self.type == 23 then self.image_name = "tutorial_open-menu"
+    elseif self.type == 24 then self.image_name = "tutorial_open-icon"
+    elseif self.type == 25 then self.image_name = "tutorial_mission-clear"
+    elseif self.type == 26 then self.image_name = "tutorial_mission-check"
+    elseif self.type == 27 then self.image_name = "tutorial_end"
+    elseif self.type == 28 then self.image_name = "tutorial_durability"
+    elseif self.type == 29 then self.image_name = "tutorial_fixing-related"
+    elseif self.type == 30 then self.image_name = "tutorial_glass"
+    elseif self.type == 31 then self.image_name = "tutorial_whatisthisgame"
+    elseif self.type == 32 then self.image_name = "tutorial_whatiscraft"
+    elseif self.type == 33 then self.image_name = "tutorial_food-get"
+    elseif self.type == 34 then self.image_name = "tutorial_one-item"
+    else self.image_name = "none"
+    end
+  end
+end
+
+function update(self, dt)
+  --ゲーム開始後にチュートリアルでなかったらGO削除
+  if gamestatus then
+    if not tutorialstatus then
+      go.delete()
+    end
+  end
+end
+
+function on_message(self, message_id, message)
+  if message_id == hash("trigger_response") and self.isChange then
+    if message.enter then
+      --侵入してきたとき
+      sprite.play_flipbook("#description", hash(self.image_name))
+    else
+      --出ていったとき
+      sprite.play_flipbook("#description", hash("none"))
+    end
+  end
+end

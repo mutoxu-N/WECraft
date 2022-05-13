@@ -1,0 +1,347 @@
+--[[
+表示されている画面を管理
+0: 非表示
+1: 管理者画面
+2: アイテム与える
+3: テレポート
+4: システム
+]]
+local stage = 0
+--テレポートの初期位置
+local posx = 2560
+local posy = 1440
+--チート文字列リセットの秒数計測
+local reset_count = 0
+local item_name
+
+--パスワード
+local password = "marron"
+
+function init(self)
+  --パスワード管理変数初期化
+  self.message = "§"
+  --nodeを変数化
+  --1
+  select_pane = gui.get_node("select_pane")
+  select_text = gui.get_node("select_text")
+  item_button = gui.get_node("item_button")
+  tp_button = gui.get_node("tp_button")
+  system_button = gui.get_node("system_button")
+  cheat_quit_button = gui.get_node("cheat_quit_button")
+  --2
+  item_pane = gui.get_node("item_pane")
+  giveitem_text = gui.get_node("giveitem_text")
+  citem_confirm_button = gui.get_node("citem_confirm_button")
+  citem_reset_button = gui.get_node("citem_reset_button")
+  citem_name_display = gui.get_node("citem_name_display")
+  citem_name_text = gui.get_node("citem_name_text")
+  --3
+  tp_pane = gui.get_node("tp_pane")
+  ctp_text = gui.get_node("ctp_text")
+  ctp_pic = gui.get_node("ctp_pic")
+  ctp_confirm = gui.get_node("ctp_confirm")
+  ctp_pin = gui.get_node("ctp_pin")
+  ctp_pin_text = gui.get_node("ctp_pin_text")
+  --4
+  system_pane = gui.get_node("system_pane")
+  csystem_text = gui.get_node("csystem_text")
+  cheat_arrow_l = {}
+  cheat_arrow_r = {}
+  for i = 1, 6 do
+    cheat_arrow_l[i] = gui.get_node("cheat_arrow_l"..i)
+    cheat_arrow_r[i] = gui.get_node("cheat_arrow_r"..i)
+  end
+  cheat_value = {gui.get_node("cheat_value_1"), gui.get_node("cheat_value_2"), gui.get_node("cheat_value_3")}
+  --画面再読み込み
+  reload_cheat()
+end
+
+function update(self, dt)
+  --画面が表示されていないときに`menu_status`を更新
+
+  if stage == 0 then
+    menu_status["cheat"] = false
+  else
+    menu_status["cheat"] = true
+  end
+end
+
+
+function on_input(self, action_id, action)
+  --ゲームが始まっていないとき無視する
+  if not gamestatus then return end
+
+  -- 閉じるボタン
+  if (action_id == hash("rightclick") or action_id == hash("leftclick")) and action.pressed and gui.pick_node(cheat_quit_button, action.x, action.y) and stage > 0 then
+    stage = 0
+    reload_cheat()
+  elseif action_id == hash("menu") and stage > 0 then
+    stage = 0
+    reload_cheat()
+  end
+
+  --各ステージごとの画面
+  if stage == 0 then
+    --表示されていないとき
+    if action_id == hash("reset") then
+      if action.released then
+        --リセットを離した時に時間をリセット
+        reset_count = 0
+      else
+        --リセットを押している間、reset_countを+1する
+        reset_count = reset_count + 1
+        if reset_count == 60 then
+          --１秒押したタイミングで実行される
+          --self.messageを初期化 プレイヤーの左右を変換する
+          self.message = ""
+          msg.post("player", "player_flip")
+        end
+      end
+
+    elseif action_id == hash("text") then
+      --一文字ずつ内部関数につけたす
+      self.message = self.message..action.text
+      if #self.message >= 20 then
+        --20文字を超えたら初期化
+        self.message = "§"
+      elseif self.message == password then
+        --パスワードが一致したら画面を表示する
+        stage = 1
+        reload_cheat()
+      end
+    end
+  elseif stage == 1 then
+    --選択画面
+    if (action_id == hash("rightclick") or action_id == hash("leftclick")) and action.pressed then
+      --押されたとき
+      if gui.pick_node(item_button, action.x, action.y) then
+        --アイテム
+        stage = 2
+        self.message = ""
+      elseif gui.pick_node(tp_button, action.x, action.y) then
+        --テレポート
+        stage = 3
+      elseif gui.pick_node(system_button, action.x, action.y) then
+        --システム
+        stage = 4
+      end
+      reload_cheat()
+    elseif action_id == hash("space") then
+      stage = 2
+      self.message = ""
+      reload_cheat()
+    end
+  elseif stage == 2 then
+    --アイテム
+    if action_id == hash("text") then
+      --内部変数を入力されたアイテム名の検出に使用
+      if not (action.text == " ") then
+        self.message = self.message..action.text
+        gui.set_text(citem_name_text, self.message)
+      end
+    elseif action_id == hash("backspace") and action.pressed then
+      --一文字消す
+      if #self.message > 0 then
+        self.message = string.sub(self.message, 1, #self.message-1)
+        gui.set_text(citem_name_text, self.message)
+      end
+    elseif action_id == hash("enter") and action.pressed then
+      --Enterで決定
+      self.message = item_confirm(self.message)
+    end
+
+    if (action_id == hash("rightclick") or action_id == hash("leftclick")) and action.pressed then
+      if gui.pick_node(citem_confirm_button, action.x, action.y) then
+        --決定ボタン
+        self.message = item_confirm(self.message)
+      elseif gui.pick_node(citem_reset_button, action.x, action.y) then
+        --リセットボタン
+        self.message = ""
+        gui.set_text(citem_name_text, self.message)
+      end
+    end
+  elseif stage == 3 then
+    --テレポート
+    if (action_id == hash("rightclick") or action_id == hash("leftclick")) and action.pressed then
+      if gui.pick_node(ctp_pic, action.x, action.y) then
+        --入力された座標を表示+マーカーを移動
+        gui.set_position(ctp_pin, vmath.vector3(action.x-640, action.y-360, 1))
+        posx = (action.x-320.5)*8
+        posy = (action.y-169.5)*8
+        gui.set_text(ctp_pin_text, "x:"..tostring(posx)..",y:"..tostring(posy))
+      elseif gui.pick_node(ctp_confirm, action.x, action.y) then
+        --決定ボタン
+        if tutorialstatus then
+          --tutorial対策
+          msg.post("gui", "set_item_name", {text = "チュートリアルではTPできません"})
+        else
+          --TP実行
+          msg.post("player", "player_tp", {x=posx, y=posy})
+        end
+        stage = 0
+        reload_cheat()
+      end
+    end
+  elseif stage == 4 then
+    --システム
+    if (action_id == hash("rightclick") or action_id == hash("leftclick")) and action.pressed then
+      local i,k
+      for i=1,#cheat_arrow_l do
+        --矢印が押されているか調べる
+        --ループ用変数iと外部管理用変数k
+        --41
+        --52
+        --63
+        if gui.pick_node(cheat_arrow_l[i], action.x, action.y) or gui.pick_node(cheat_arrow_r[i], action.x, action.y) then
+          k = i
+          break
+        end
+      end
+      --どれも押されていないときは無視
+      if k == nil then return end
+      if gui.pick_node(cheat_arrow_l[k], action.x, action.y) then
+        --左矢印が押されている時
+        --必ず値が０以上になるようにする
+        if k == 1 then
+          --スピードの内側(左)
+          if speed > 25 then
+            speed = speed - 25
+          end
+        elseif k == 2 then
+          --腹減り速度の内側(左)
+          if food_reduce_period > 1 then
+            food_reduce_period = food_reduce_period - 1
+          end
+        elseif k == 3 then
+          --食料ゲージの内側(左)
+          if food_amount > 1 then
+            food_amount = food_amount - 1
+          end
+        elseif k == 4 then
+          --スピードの外側(左)
+          if speed > 200 then
+            speed = speed - 200
+          end
+        elseif k == 5 then
+          --腹減り速度の外側(左)
+          food_reduce_period = food_reduce_period - 10
+          if food_reduce_period <= 0 then
+            food_reduce_period = 1
+          end
+        elseif k == 6 then
+          --食料ゲージの外側(左)
+          food_amount = food_amount - 10
+          if food_amount <= 0 then
+            food_amount = 1
+          end
+        end
+      elseif gui.pick_node(cheat_arrow_r[k], action.x, action.y) then
+        --右側矢印が押されたとき
+        if k == 1 then
+          --スピードの内側(右)
+          speed = speed + 25
+        elseif k == 2 then
+          --腹減り速度の内側(右)
+          food_reduce_period = food_reduce_period + 1
+        elseif k == 3 then
+          --食料ゲージの内側(右)
+          food_amount = food_amount + 1
+        elseif k == 4 then
+          --スピードの外側(右)
+          speed = speed + 200
+        elseif k == 5 then
+          --腹減り速度の外側(右)
+          food_reduce_period = food_reduce_period + 10
+        elseif k == 6 then
+          --食料ゲージの外側(右)
+          food_amount = food_amount + 10
+        end
+      end
+      --食料ゲージの最大値を更新
+      max_food = food_amount
+
+      --食料ゲージ更新
+      msg.post("gui", "food_gage_update")
+      reload_cheat()
+    end
+  end
+
+end
+
+
+function reload_cheat()
+  --一旦全部非表示(ボタン以外)
+  msg.post("gui", "hide_menu")
+  msg.post("gui", "hide_manual")
+  msg.post("gui", "hide_recipebook")
+  gui.set_color(cheat_quit_button, vmath.vector4(gui.get_color(cheat_quit_button).x, gui.get_color(cheat_quit_button).y, gui.get_color(cheat_quit_button).z, 1))
+  gui.set_color(select_pane, vmath.vector4(gui.get_color(select_pane).x, gui.get_color(select_pane).y, gui.get_color(select_pane).z, 0))
+  gui.set_color(select_text, vmath.vector4(gui.get_color(select_text).x, gui.get_color(select_text).y, gui.get_color(select_text).z, 0))
+  gui.set_color(item_pane, vmath.vector4(gui.get_color(item_pane).x, gui.get_color(item_pane).y, gui.get_color(item_pane).z, 0))
+  gui.set_color(giveitem_text, vmath.vector4(gui.get_color(giveitem_text).x, gui.get_color(giveitem_text).y, gui.get_color(giveitem_text).z, 0))
+  gui.set_color(tp_pane, vmath.vector4(gui.get_color(tp_pane).x, gui.get_color(tp_pane).y, gui.get_color(tp_pane).z, 0))
+  gui.set_color(ctp_text, vmath.vector4(gui.get_color(ctp_text).x, gui.get_color(ctp_text).y, gui.get_color(ctp_text).z, 0))
+  gui.set_color(ctp_pin, vmath.vector4(gui.get_color(ctp_pin).x, gui.get_color(ctp_pin).y, gui.get_color(ctp_pin).z, 0))
+  gui.set_color(system_pane, vmath.vector4(gui.get_color(system_pane).x, gui.get_color(system_pane).y, gui.get_color(system_pane).z, 0))
+  gui.set_color(csystem_text, vmath.vector4(gui.get_color(csystem_text).x, gui.get_color(csystem_text).y, gui.get_color(csystem_text).z, 0))
+
+  --stageが0以外の時は必要なものを表示する
+  if stage == 0 then
+    --非表示
+    --ボタンも非表示にする
+    gui.set_color(cheat_quit_button, vmath.vector4(gui.get_color(cheat_quit_button).x, gui.get_color(cheat_quit_button).y, gui.get_color(cheat_quit_button).z, 0))
+  elseif stage == 1 then
+    --管理者画面
+    gui.set_color(select_pane, vmath.vector4(gui.get_color(select_pane).x, gui.get_color(select_pane).y, gui.get_color(select_pane).z, 0.5))
+    gui.set_color(select_text, vmath.vector4(gui.get_color(select_text).x, gui.get_color(select_text).y, gui.get_color(select_text).z, 1))
+  elseif stage == 2 then
+    --アイテム
+    gui.set_color(item_pane, vmath.vector4(gui.get_color(item_pane).x, gui.get_color(item_pane).y, gui.get_color(item_pane).z, 0.5))
+    gui.set_color(giveitem_text, vmath.vector4(gui.get_color(giveitem_text).x, gui.get_color(giveitem_text).y, gui.get_color(giveitem_text).z, 1))
+    gui.set_text(citem_name_text, "アイテム名(英語)")
+  elseif stage == 3 then
+    --テレポート
+    gui.set_color(tp_pane, vmath.vector4(gui.get_color(tp_pane).x, gui.get_color(tp_pane).y, gui.get_color(tp_pane).z, 0.5))
+    gui.set_color(ctp_text, vmath.vector4(gui.get_color(ctp_text).x, gui.get_color(ctp_text).y, gui.get_color(ctp_text).z, 1))
+    gui.set_color(ctp_pin, vmath.vector4(gui.get_color(ctp_pin).x, gui.get_color(ctp_pin).y, gui.get_color(ctp_pin).z, 1))
+  elseif stage == 4 then
+    --食料maxにしてゲージ更新
+    food_amount = max_food
+    msg.post("gui", "food_gage_update")
+    --システム
+    gui.set_color(system_pane, vmath.vector4(gui.get_color(system_pane).x, gui.get_color(system_pane).y, gui.get_color(system_pane).z, 0.5))
+    gui.set_color(csystem_text, vmath.vector4(gui.get_color(csystem_text).x, gui.get_color(csystem_text).y, gui.get_color(csystem_text).z, 1))
+    --更新された値に更新する
+    gui.set_text(cheat_value[1], tostring(speed))
+    gui.set_text(cheat_value[2], tostring(food_reduce_period))
+    gui.set_text(cheat_value[3], tostring(food_amount))
+  end
+end
+
+function item_confirm(value)
+  if is_exists(value) and not (value == "hand") then
+    if not (having_item_name == "none") then
+      msg.post("cursor", "place_item")
+    end
+    item_name = value
+    timer.delay(0.01, false, reload_gaming_gui)
+  else
+    --存在しないor"hand"だった場合
+    gui.set_text(citem_name_text, "※アイテムが存在しません")
+  end
+  return ""
+end
+
+function reload_gaming_gui(self, handle, time_elapsed)
+  --入力されたアイテムが存在するか確かめる
+  --さらに"hand"でもなかった時
+  set_having_item_name(item_name)
+  msg.post("gui", "set_having_item")
+  self.message = ""
+  gui.set_text(citem_name_text, "アイテム名(英語)")
+  timer.delay(0.01, false, reset)
+end
+
+function reset()
+  item_name = ""
+end

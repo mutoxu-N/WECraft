@@ -1,0 +1,126 @@
+images {
+  image: "/main/assets/tutorial/images/question.png"
+}
+images {
+  image: "/main/assets/items/none.png"
+}
+images {
+  image: "/main/assets/tutorial/images/circle.png"
+}
+images {
+  image: "/main/assets/tutorial/images/panishment.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_craft.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_craft2.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_food.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_wasd.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_cant-get.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_food-zero.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_furnace.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_not-break.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_open-icon.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_open-menu.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_resource.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_burn-out.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_cant-carry.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_click-filter.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_craft-related.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_food-amount.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_food-reduce.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_food-related.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_food-tutorial.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_have-place.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_having-filter.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_mission-check.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_mission-clear.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_open-recipebook.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_recipebook-related.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_system-related.png"
+}
+images {
+  image: "/main/assets/tutorial/images/arrow.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_end.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_durability.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_fixing-related.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_glass.png"
+}
+images {
+  image: "/main/assets/tutorial/images/plus.png"
+}
+images {
+  image: "/main/assets/tutorial/images/block.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_whatiscraft.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_whatisthisgame.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_food-get.png"
+}
+images {
+  image: "/main/assets/tutorial/images/tutorial_one-item.png"
+}
+margin: 2
+extrude_borders: 0
+inner_padding: 0

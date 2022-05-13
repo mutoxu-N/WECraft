@@ -1,0 +1,11906 @@
+name: "game"
+instances {
+  id: "player"
+  prototype: "/main/assets/player/player.go"
+  position {
+    x: 2560.0
+    y: 1440.0
+    z: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.15
+    y: 0.15
+    z: 1.0
+  }
+}
+instances {
+  id: "camera"
+  prototype: "/orthographic/camera.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wall_down"
+  prototype: "/main/assets/system/wall.go"
+  position {
+    x: 2560.0
+    y: -32.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wall_left"
+  prototype: "/main/assets/system/wall.go"
+  position {
+    x: -32.0
+    y: 1440.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wall_right"
+  prototype: "/main/assets/system/wall.go"
+  position {
+    x: 5152.0
+    y: 1440.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wall_top"
+  prototype: "/main/assets/system/wall.go"
+  position {
+    x: 2560.0
+    y: 2912.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "cursor"
+  prototype: "/main/assets/system/cursor.go"
+  position {
+    x: 2423.0
+    y: -403.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "menu_manager"
+  prototype: "/main/assets/system/system.go"
+  position {
+    x: -1920.0
+    y: 360.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wall_l"
+  prototype: "/main/assets/system/wall.go"
+  position {
+    x: -4032.0
+    y: 1848.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wall_b"
+  prototype: "/main/assets/system/wall.go"
+  position {
+    x: -3743.0
+    y: 966.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wall_t"
+  prototype: "/main/assets/system/wall.go"
+  position {
+    x: -3743.0
+    y: 2472.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wall_r"
+  prototype: "/main/assets/system/wall.go"
+  position {
+    x: -1408.0
+    y: 1848.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t1"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3700.0
+    y: 2150.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t2"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3107.0
+    y: 2150.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t4"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2323.0
+    y: 2150.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "4.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t5"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2049.0
+    y: 2150.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "5.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t6"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -1696.0
+    y: 2150.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "6.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "pickaxe1t"
+  prototype: "/main/assets/items/tool/pickaxe.go"
+  position {
+    x: -3107.0
+    y: 2034.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp1t"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: -2366.0
+    y: 2029.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp2t"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: -2274.0
+    y: 2029.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "axe1t"
+  prototype: "/main/assets/items/tool/axe.go"
+  position {
+    x: -2094.0
+    y: 2034.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "knife1t"
+  prototype: "/main/assets/items/tool/knife.go"
+  position {
+    x: -2002.0
+    y: 2034.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "circle"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2323.0
+    y: 1969.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "circle"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "panishment"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2044.0
+    y: 1969.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "panishment"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t3"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2720.0
+    y: 2150.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t1"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3451.0
+    y: 2150.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2799.0
+    y: 2150.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t3"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2435.0
+    y: 2150.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t4"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2190.0
+    y: 2150.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t6"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -1526.0
+    y: 1888.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.70710677
+    w: -0.70710677
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t7"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -1581.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "7.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "burning_furnace1t"
+  prototype: "/main/assets/items/fixing/burning_furnace.go"
+  position {
+    x: -3368.0
+    y: 1507.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coal2t"
+  prototype: "/main/assets/items/material/coal.go"
+  position {
+    x: -3311.0
+    y: 1658.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t8"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3141.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "8.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree1t"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: -1742.0
+    y: 2007.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t7"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3056.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 6.123234E-17
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t9"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3217.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "9.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t8"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3478.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 6.123234E-17
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t9"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2037.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 6.123234E-17
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t10"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3311.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "10.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t28"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3874.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "28.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t12"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -1847.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "12.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t13"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2203.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "13.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t10"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2392.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 6.123234E-17
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t14"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2525.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "14.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t11"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2715.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 6.123234E-17
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t15"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2814.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "15.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t12"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3867.0
+    y: 1423.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.70710677
+    w: -0.70710677
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t16"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3869.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "16.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t13"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3789.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t17"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3543.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "17.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t14"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3457.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t18"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3362.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "18.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t15"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3265.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t19"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3171.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "19.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t16"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3068.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t20"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2970.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "20.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t17"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2842.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t21"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2730.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "21.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t22"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2527.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "22.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t19"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2431.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t23"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2331.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "23.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t20"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2238.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t24"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2148.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "24.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t21"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2047.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t25"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -1959.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "25.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t22"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -1861.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t26"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -1765.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "26.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t23"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -1672.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t27"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -1574.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "27.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t24"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2633.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain1t"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: -3659.0
+    y: 1490.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "trunk1t"
+  prototype: "/main/assets/items/fixing/trunk.go"
+  position {
+    x: -3613.0
+    y: 1495.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "apple1t"
+  prototype: "/main/assets/items/food/apple.go"
+  position {
+    x: -3551.0
+    y: 1068.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "acorn2t"
+  prototype: "/main/assets/items/food/acorn.go"
+  position {
+    x: -3660.0
+    y: 1068.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "acorn1t"
+  prototype: "/main/assets/items/food/acorn.go"
+  position {
+    x: -3437.0
+    y: 1068.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant1t"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: -3330.0
+    y: 1068.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "handle1t"
+  prototype: "/main/assets/items/material/handle.go"
+  position {
+    x: -2851.0
+    y: 1510.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone1t"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: -2768.0
+    y: 1510.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t18"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -1848.0
+    y: 2150.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t25"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -1691.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 6.123234E-17
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t2"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3753.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 6.123234E-17
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t11"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3617.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "11.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "flint1t"
+  prototype: "/main/assets/items/tool/flint.go"
+  position {
+    x: -3195.0
+    y: 1657.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "completeitem2t"
+  prototype: "/main/assets/system/completeitem.go"
+  position {
+    x: -1959.0
+    y: 1029.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sand2t"
+  prototype: "/main/assets/items/material/sand.go"
+  position {
+    x: -3275.0
+    y: 1504.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sand1t"
+  prototype: "/main/assets/items/material/sand.go"
+  position {
+    x: -3217.0
+    y: 1504.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sand3t"
+  prototype: "/main/assets/items/material/sand.go"
+  position {
+    x: -3155.0
+    y: 1504.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sand4t"
+  prototype: "/main/assets/items/material/sand.go"
+  position {
+    x: -3095.0
+    y: 1504.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sand5t"
+  prototype: "/main/assets/items/material/sand.go"
+  position {
+    x: -3041.0
+    y: 1504.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t29"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2980.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "29.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t26"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2910.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 6.123234E-17
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sand1t1"
+  prototype: "/main/assets/items/material/sand.go"
+  position {
+    x: -3217.0
+    y: 1545.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sand2t1"
+  prototype: "/main/assets/items/material/sand.go"
+  position {
+    x: -3275.0
+    y: 1545.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sand3t1"
+  prototype: "/main/assets/items/material/sand.go"
+  position {
+    x: -3155.0
+    y: 1545.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sand4t1"
+  prototype: "/main/assets/items/material/sand.go"
+  position {
+    x: -3095.0
+    y: 1545.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sand5t1"
+  prototype: "/main/assets/items/material/sand.go"
+  position {
+    x: -3041.0
+    y: 1545.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sand1t2"
+  prototype: "/main/assets/items/material/sand.go"
+  position {
+    x: -3217.0
+    y: 1464.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sand2t2"
+  prototype: "/main/assets/items/material/sand.go"
+  position {
+    x: -3275.0
+    y: 1464.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sand3t2"
+  prototype: "/main/assets/items/material/sand.go"
+  position {
+    x: -3155.0
+    y: 1464.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sand4t2"
+  prototype: "/main/assets/items/material/sand.go"
+  position {
+    x: -3095.0
+    y: 1464.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sand5t2"
+  prototype: "/main/assets/items/material/sand.go"
+  position {
+    x: -3041.0
+    y: 1464.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree0"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 638.0
+    y: 1844.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "dahilia0"
+  prototype: "/main/assets/items/material/dahilia.go"
+  position {
+    x: 1967.0
+    y: 1029.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "daisy0"
+  prototype: "/main/assets/items/material/daisy.go"
+  position {
+    x: 2329.0
+    y: 189.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "camellia0"
+  prototype: "/main/assets/items/material/camellia.go"
+  position {
+    x: 887.0
+    y: 1944.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "chrysanthemum0"
+  prototype: "/main/assets/items/material/chrysanthemum.go"
+  position {
+    x: 1292.0
+    y: 1562.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "freesia0"
+  prototype: "/main/assets/items/material/freesia.go"
+  position {
+    x: 1389.0
+    y: 696.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "gentian0"
+  prototype: "/main/assets/items/material/gentian.go"
+  position {
+    x: 2798.0
+    y: 476.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp0"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 723.0
+    y: 1373.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain0"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 1464.0
+    y: 309.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain0"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 1267.0
+    y: 145.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sandmountain0"
+  prototype: "/main/assets/items/fixing/sandmountain.go"
+  position {
+    x: 1550.0
+    y: 1902.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz0"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 3727.0
+    y: 2580.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "mushroom0"
+  prototype: "/main/assets/items/material/mushroom.go"
+  position {
+    x: 894.0
+    y: 183.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "cottonflower0"
+  prototype: "/main/assets/items/material/cottonflower.go"
+  position {
+    x: 996.0
+    y: 1458.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "opened_coal_mountain1t"
+  prototype: "/main/assets/items/resorces/opened_coal_mountain.go"
+  position {
+    x: -1676.0
+    y: 1936.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "opened_iron_mountain1t1"
+  prototype: "/main/assets/items/resorces/opened_iron_mountain.go"
+  position {
+    x: -1640.0
+    y: 2017.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t30"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3386.0
+    y: 1600.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "30.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "puls_t1"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -1959.0
+    y: 1095.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 6.123234E-17
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "plus"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stick1t"
+  prototype: "/main/assets/items/material/stick.go"
+  position {
+    x: -2013.0
+    y: 1095.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 6.123234E-17
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stick1t1"
+  prototype: "/main/assets/items/material/stick.go"
+  position {
+    x: -1903.0
+    y: 1095.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 6.123234E-17
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "puls_t"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2323.0
+    y: 2029.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 6.123234E-17
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "plus"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "puls_t2"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2049.0
+    y: 2034.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 6.123234E-17
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "plus"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "block"
+  prototype: "/main/assets/tutorial/block.go"
+  position {
+    x: -3544.0
+    y: 2165.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sandmountain13"
+  prototype: "/main/assets/items/fixing/sandmountain.go"
+  position {
+    x: 1381.0
+    y: 2104.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sandmountain1"
+  prototype: "/main/assets/items/fixing/sandmountain.go"
+  position {
+    x: 1871.0
+    y: 2003.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sandmountain2"
+  prototype: "/main/assets/items/fixing/sandmountain.go"
+  position {
+    x: 1626.0
+    y: 1688.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sandmountain3"
+  prototype: "/main/assets/items/fixing/sandmountain.go"
+  position {
+    x: 2018.0
+    y: 1579.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sandmountain4"
+  prototype: "/main/assets/items/fixing/sandmountain.go"
+  position {
+    x: 1984.0
+    y: 1788.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sandmountain5"
+  prototype: "/main/assets/items/fixing/sandmountain.go"
+  position {
+    x: 4215.0
+    y: 1551.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sandmountain6"
+  prototype: "/main/assets/items/fixing/sandmountain.go"
+  position {
+    x: 4376.0
+    y: 1725.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sandmountain7"
+  prototype: "/main/assets/items/fixing/sandmountain.go"
+  position {
+    x: 4592.0
+    y: 1548.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sandmountain8"
+  prototype: "/main/assets/items/fixing/sandmountain.go"
+  position {
+    x: 4988.0
+    y: 1961.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sandmountain9"
+  prototype: "/main/assets/items/fixing/sandmountain.go"
+  position {
+    x: 4785.0
+    y: 1675.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sandmountain10"
+  prototype: "/main/assets/items/fixing/sandmountain.go"
+  position {
+    x: 4724.0
+    y: 1830.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sandmountain11"
+  prototype: "/main/assets/items/fixing/sandmountain.go"
+  position {
+    x: 5005.0
+    y: 1386.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sandmountain12"
+  prototype: "/main/assets/items/fixing/sandmountain.go"
+  position {
+    x: 5022.0
+    y: 1639.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain18"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 900.0
+    y: 370.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain21"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 703.0
+    y: 206.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "mushroom14"
+  prototype: "/main/assets/items/material/mushroom.go"
+  position {
+    x: 330.0
+    y: 244.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain1"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 1098.0
+    y: 504.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain1"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 448.0
+    y: 496.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "mushroom1"
+  prototype: "/main/assets/items/material/mushroom.go"
+  position {
+    x: 615.0
+    y: 352.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain2"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 848.0
+    y: 633.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain2"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 211.0
+    y: 116.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain3"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 709.0
+    y: 471.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain4"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 71.0
+    y: 548.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain5"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 1051.0
+    y: 121.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain6"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 192.0
+    y: 369.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "mushroom2"
+  prototype: "/main/assets/items/material/mushroom.go"
+  position {
+    x: 451.0
+    y: 65.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain7"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 1080.0
+    y: 337.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain8"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 577.0
+    y: 603.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain3"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 1427.0
+    y: 93.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain4"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 1298.0
+    y: 362.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "mushroom4"
+  prototype: "/main/assets/items/material/mushroom.go"
+  position {
+    x: 312.0
+    y: 565.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "mushroom5"
+  prototype: "/main/assets/items/material/mushroom.go"
+  position {
+    x: 939.0
+    y: 497.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain5"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 3572.0
+    y: 1626.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain9"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 3087.0
+    y: 1298.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain10"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 2455.0
+    y: 1640.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain11"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 3464.0
+    y: 1429.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "mushroom6"
+  prototype: "/main/assets/items/material/mushroom.go"
+  position {
+    x: 2999.0
+    y: 1444.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain6"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 3087.0
+    y: 1623.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain7"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 3596.0
+    y: 1846.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "mushroom7"
+  prototype: "/main/assets/items/material/mushroom.go"
+  position {
+    x: 2591.0
+    y: 1243.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain8"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 3912.0
+    y: 1887.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain12"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 3774.0
+    y: 1516.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "mushroom9"
+  prototype: "/main/assets/items/material/mushroom.go"
+  position {
+    x: 3038.0
+    y: 1616.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain9"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 4228.0
+    y: 2753.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain13"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 4096.0
+    y: 2336.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "mushroom10"
+  prototype: "/main/assets/items/material/mushroom.go"
+  position {
+    x: 4053.0
+    y: 2526.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain10"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 4181.0
+    y: 1891.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain11"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 3979.0
+    y: 1400.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain12"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 2807.0
+    y: 1337.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain14"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 3310.0
+    y: 1686.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain15"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 2725.0
+    y: 1658.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain16"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 4120.0
+    y: 2657.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "mushroom11"
+  prototype: "/main/assets/items/material/mushroom.go"
+  position {
+    x: 3869.0
+    y: 2225.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain17"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 4014.0
+    y: 2079.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain13"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 3266.0
+    y: 1432.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "mushroom13"
+  prototype: "/main/assets/items/material/mushroom.go"
+  position {
+    x: 3499.0
+    y: 1285.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain14"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 2843.0
+    y: 1600.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain18"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 3780.0
+    y: 2042.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain15"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 3410.0
+    y: 1546.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain19"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 4261.0
+    y: 1858.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain16"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 3400.0
+    y: 1824.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ironmountain20"
+  prototype: "/main/assets/items/fixing/ironmountain.go"
+  position {
+    x: 3073.0
+    y: 1729.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "coalmountain17"
+  prototype: "/main/assets/items/fixing/coalmountain.go"
+  position {
+    x: 2431.0
+    y: 1406.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone2"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 108.0
+    y: 2632.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone3"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 1537.0
+    y: 2412.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone4"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 1700.0
+    y: 2605.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone11"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 2056.0
+    y: 2548.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone13"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 1235.0
+    y: 2768.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone14"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 1065.0
+    y: 2310.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone18"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 327.0
+    y: 953.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone20"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 134.0
+    y: 1070.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone23"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 220.0
+    y: 1787.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone24"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 94.0
+    y: 1463.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone25"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 1919.0
+    y: 2526.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone26"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 1791.0
+    y: 2340.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone30"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 4021.0
+    y: 375.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone31"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 2180.0
+    y: 2753.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone33"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 715.0
+    y: 2363.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone37"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3983.0
+    y: 881.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone38"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 2454.0
+    y: 2447.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone41"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 2262.0
+    y: 2256.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone45"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 388.0
+    y: 2791.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone46"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 2811.0
+    y: 2489.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone47"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3543.0
+    y: 81.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone50"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 692.0
+    y: 2595.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone51"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 2526.0
+    y: 2660.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone53"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3177.0
+    y: 1125.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone55"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 2685.0
+    y: 2257.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone58"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3018.0
+    y: 2512.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone61"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 2927.0
+    y: 2153.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone64"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 2743.0
+    y: 1840.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone66"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 2960.0
+    y: 1884.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone69"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 4998.0
+    y: 84.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone70"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 2964.0
+    y: 2812.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone72"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3241.0
+    y: 2055.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone74"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3814.0
+    y: 406.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone77"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3408.0
+    y: 1110.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone79"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3906.0
+    y: 616.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone82"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 106.0
+    y: 2418.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone85"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3675.0
+    y: 2357.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone88"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3478.0
+    y: 2611.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone89"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3437.0
+    y: 405.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone91"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3113.0
+    y: 2341.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone93"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 419.0
+    y: 2314.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone95"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3726.0
+    y: 2770.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone97"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3726.0
+    y: 168.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone98"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3870.0
+    y: 784.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone103"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 2711.0
+    y: 860.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone105"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 2975.0
+    y: 1110.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone107"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3521.0
+    y: 595.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone108"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3633.0
+    y: 698.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone111"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3324.0
+    y: 830.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone112"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3375.0
+    y: 149.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone114"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 4148.0
+    y: 493.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone115"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3548.0
+    y: 839.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone119"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3171.0
+    y: 908.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone121"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 2862.0
+    y: 582.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone122"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 4226.0
+    y: 167.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone124"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 4133.0
+    y: 692.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone125"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3904.0
+    y: 1093.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone130"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 4587.0
+    y: 286.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone131"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 4393.0
+    y: 243.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone135"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3368.0
+    y: 544.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone136"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3082.0
+    y: 419.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone138"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3617.0
+    y: 310.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone140"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3026.0
+    y: 740.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz63"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 261.0
+    y: 1982.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz1"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 275.0
+    y: 2575.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz5"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 61.0
+    y: 1782.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz6"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 260.0
+    y: 2219.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz7"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 212.0
+    y: 1455.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz8"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 117.0
+    y: 1283.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz10"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 541.0
+    y: 827.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone142"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 417.0
+    y: 799.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone144"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 219.0
+    y: 932.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz12"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 588.0
+    y: 2200.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz14"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 567.0
+    y: 2809.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz15"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 1288.0
+    y: 2354.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz16"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 1018.0
+    y: 2529.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz17"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 859.0
+    y: 2778.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz18"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 3351.0
+    y: 1006.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz22"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 2147.0
+    y: 2375.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz23"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 1717.0
+    y: 2454.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz24"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 2295.0
+    y: 2661.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz25"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 2576.0
+    y: 2794.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz27"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 2391.0
+    y: 1998.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz28"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 2555.0
+    y: 2062.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz29"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 2815.0
+    y: 2322.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz32"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 2857.0
+    y: 1961.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz33"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 3143.0
+    y: 2762.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz34"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 3260.0
+    y: 2364.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz35"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 3572.0
+    y: 2454.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz38"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 3424.0
+    y: 2189.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz39"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 3339.0
+    y: 1967.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz40"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 2793.0
+    y: 960.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz41"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 2945.0
+    y: 915.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz43"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 3699.0
+    y: 1024.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz44"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 3678.0
+    y: 531.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz45"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 3106.0
+    y: 557.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz46"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 3257.0
+    y: 655.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz48"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 3275.0
+    y: 202.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz49"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 3989.0
+    y: 111.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz51"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 3784.0
+    y: 271.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz52"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 3718.0
+    y: 838.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz55"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 3466.0
+    y: 54.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz56"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 3954.0
+    y: 499.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz57"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 3986.0
+    y: 1103.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz58"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 4319.0
+    y: 356.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz60"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 4494.0
+    y: 85.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz61"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 4675.0
+    y: 85.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "quartz62"
+  prototype: "/main/assets/items/material/quartz.go"
+  position {
+    x: 4860.0
+    y: 170.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "camellia1"
+  prototype: "/main/assets/items/material/camellia.go"
+  position {
+    x: 4267.0
+    y: 1214.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "chrysanthemum1"
+  prototype: "/main/assets/items/material/chrysanthemum.go"
+  position {
+    x: 4737.0
+    y: 2615.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "dahilia1"
+  prototype: "/main/assets/items/material/dahilia.go"
+  position {
+    x: 5012.0
+    y: 310.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "daisy1"
+  prototype: "/main/assets/items/material/daisy.go"
+  position {
+    x: 4445.0
+    y: 2017.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "freesia1"
+  prototype: "/main/assets/items/material/freesia.go"
+  position {
+    x: 4583.0
+    y: 649.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "gentian1"
+  prototype: "/main/assets/items/material/gentian.go"
+  position {
+    x: 2315.0
+    y: 1231.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree53"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 2157.0
+    y: 548.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree1"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 690.0
+    y: 1568.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree2"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 471.0
+    y: 1338.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree3"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 1023.0
+    y: 2114.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree4"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 776.0
+    y: 2108.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree5"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 822.0
+    y: 1074.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree6"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 1155.0
+    y: 1384.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree8"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 1109.0
+    y: 1045.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree9"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 1345.0
+    y: 1125.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree10"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 1483.0
+    y: 1367.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree11"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 1483.0
+    y: 849.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree12"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 1719.0
+    y: 1074.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree13"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 1822.0
+    y: 1332.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree14"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 2139.0
+    y: 1137.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree15"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 2179.0
+    y: 1413.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree17"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 1712.0
+    y: 483.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree19"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 2245.0
+    y: 870.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree20"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 1905.0
+    y: 217.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree22"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 2512.0
+    y: 790.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree23"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 2412.0
+    y: 1037.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree25"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 3079.0
+    y: 137.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree26"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 2599.0
+    y: 97.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree27"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 2152.0
+    y: 130.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree28"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 4453.0
+    y: 1250.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree29"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 4860.0
+    y: 1084.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree30"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 4380.0
+    y: 1044.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree32"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 4651.0
+    y: 1356.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree33"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 4677.0
+    y: 1041.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree35"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 4430.0
+    y: 765.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree36"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 5009.0
+    y: 880.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree38"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 4541.0
+    y: 488.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree39"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 4800.0
+    y: 381.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree40"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 5043.0
+    y: 539.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree42"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 4741.0
+    y: 854.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree43"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 4892.0
+    y: 2418.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree44"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 4901.0
+    y: 2120.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree46"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 4622.0
+    y: 2006.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree47"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 4406.0
+    y: 2482.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree49"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 4879.0
+    y: 2757.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree50"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 4354.0
+    y: 2236.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tree51"
+  prototype: "/main/assets/items/resorces/tree.go"
+  position {
+    x: 4614.0
+    y: 2231.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp8"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 519.0
+    y: 1496.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp1"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 567.0
+    y: 1700.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp2"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 908.0
+    y: 1548.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp3"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 756.0
+    y: 1808.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp5"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 411.0
+    y: 1619.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp6"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 652.0
+    y: 2055.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp7"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1116.0
+    y: 1927.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp9"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1135.0
+    y: 1799.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp10"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 922.0
+    y: 2083.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp12"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1040.0
+    y: 1359.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp13"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 827.0
+    y: 1643.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp14"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1035.0
+    y: 1638.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp16"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 619.0
+    y: 1155.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp17"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 827.0
+    y: 1150.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp18"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 988.0
+    y: 1027.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp20"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1206.0
+    y: 1193.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp21"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1238.0
+    y: 688.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp23"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1612.0
+    y: 1010.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp24"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1600.0
+    y: 1221.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp25"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1249.0
+    y: 870.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp27"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1369.0
+    y: 1517.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp28"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1677.0
+    y: 1363.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp29"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1479.0
+    y: 1049.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp30"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1808.0
+    y: 1177.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp31"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1955.0
+    y: 1345.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp32"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1541.0
+    y: 647.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp33"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1695.0
+    y: 851.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp35"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1989.0
+    y: 851.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp36"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2135.0
+    y: 1271.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp37"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1765.0
+    y: 627.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp38"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2002.0
+    y: 642.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp39"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2152.0
+    y: 940.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp41"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2294.0
+    y: 1123.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp42"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2311.0
+    y: 1339.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp43"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1905.0
+    y: 510.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp44"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1788.0
+    y: 392.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp46"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2422.0
+    y: 895.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp47"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2426.0
+    y: 718.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp48"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2252.0
+    y: 585.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp50"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2013.0
+    y: 300.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp51"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1808.0
+    y: 137.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp52"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 1925.0
+    y: 89.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp53"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2052.0
+    y: 82.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp54"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2089.0
+    y: 196.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp56"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2272.0
+    y: 359.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp57"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2389.0
+    y: 265.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp58"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2531.0
+    y: 413.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp60"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2538.0
+    y: 566.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp61"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2643.0
+    y: 228.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp62"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2766.0
+    y: 256.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp63"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2678.0
+    y: 423.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp65"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2412.0
+    y: 103.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp66"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2489.0
+    y: 273.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp68"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2692.0
+    y: 103.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp69"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2882.0
+    y: 268.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp70"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2848.0
+    y: 111.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp72"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 2976.0
+    y: 84.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp73"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 3137.0
+    y: 27.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp74"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 3188.0
+    y: 145.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp76"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4263.0
+    y: 978.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp77"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4424.0
+    y: 921.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp78"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4475.0
+    y: 1039.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp79"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4552.0
+    y: 893.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp80"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4289.0
+    y: 1084.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp82"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4197.0
+    y: 1245.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp83"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4385.0
+    y: 1147.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp85"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4343.0
+    y: 1366.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp86"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4493.0
+    y: 1424.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp87"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4638.0
+    y: 1171.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp89"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4809.0
+    y: 973.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp90"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4733.0
+    y: 1304.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp92"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4557.0
+    y: 1063.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp93"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4831.0
+    y: 1225.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp94"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4258.0
+    y: 688.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp95"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4418.0
+    y: 557.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp96"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4544.0
+    y: 759.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp97"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4687.0
+    y: 705.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp98"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4734.0
+    y: 1119.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp100"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 5041.0
+    y: 1019.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp101"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4910.0
+    y: 959.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp103"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4901.0
+    y: 849.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp104"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4919.0
+    y: 668.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp106"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 5036.0
+    y: 778.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp107"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4694.0
+    y: 482.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp108"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4769.0
+    y: 540.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp109"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4868.0
+    y: 520.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp111"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4912.0
+    y: 361.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp112"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 5029.0
+    y: 400.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp113"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4868.0
+    y: 2230.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp114"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 5008.0
+    y: 2307.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp116"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 5029.0
+    y: 2110.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp117"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4764.0
+    y: 2325.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp119"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4715.0
+    y: 2151.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp120"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4473.0
+    y: 1932.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp121"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4284.0
+    y: 2047.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp122"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4386.0
+    y: 1996.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp123"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4348.0
+    y: 2151.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp124"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4216.0
+    y: 2203.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp126"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4449.0
+    y: 2311.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp127"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4859.0
+    y: 2555.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp128"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4304.0
+    y: 2449.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp129"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4407.0
+    y: 2560.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp131"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4534.0
+    y: 2535.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp132"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4606.0
+    y: 2601.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp133"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4808.0
+    y: 2814.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp135"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4561.0
+    y: 2357.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp137"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 5017.0
+    y: 2818.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp138"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4939.0
+    y: 2642.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp141"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 4454.0
+    y: 2700.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hemp142"
+  prototype: "/main/assets/items/material/hemp.go"
+  position {
+    x: 5029.0
+    y: 2426.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant23"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: 839.0
+    y: 1481.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant1"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: 1021.0
+    y: 1725.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant2"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: 760.0
+    y: 2004.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant3"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: 436.0
+    y: 1914.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant4"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: 707.0
+    y: 1024.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant6"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: 1326.0
+    y: 849.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant7"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: 1757.0
+    y: 1228.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant8"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: 1848.0
+    y: 876.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant10"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: 2404.0
+    y: 614.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant11"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: 2323.0
+    y: 75.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant13"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: 2668.0
+    y: 511.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant14"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: 2918.0
+    y: 27.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant15"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: 4414.0
+    y: 676.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant17"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: 4501.0
+    y: 1122.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant18"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: 4950.0
+    y: 788.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant19"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: 4481.0
+    y: 2172.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant20"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: 4359.0
+    y: 2381.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "wildplant21"
+  prototype: "/main/assets/items/food/wildplant.go"
+  position {
+    x: 4844.0
+    y: 2666.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone145"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3184.0
+    y: 713.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone1"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3719.0
+    y: 604.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone5"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3128.0
+    y: 1034.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone6"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 471.0
+    y: 1023.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone7"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 321.0
+    y: 1226.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "cottonflower14"
+  prototype: "/main/assets/items/material/cottonflower.go"
+  position {
+    x: 833.0
+    y: 1270.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "cottonflower1"
+  prototype: "/main/assets/items/material/cottonflower.go"
+  position {
+    x: 1004.0
+    y: 844.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "cottonflower2"
+  prototype: "/main/assets/items/material/cottonflower.go"
+  position {
+    x: 1911.0
+    y: 1165.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "cottonflower3"
+  prototype: "/main/assets/items/material/cottonflower.go"
+  position {
+    x: 2191.0
+    y: 731.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "cottonflower4"
+  prototype: "/main/assets/items/material/cottonflower.go"
+  position {
+    x: 1890.0
+    y: 731.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "cottonflower5"
+  prototype: "/main/assets/items/material/cottonflower.go"
+  position {
+    x: 2091.0
+    y: 355.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "cottonflower6"
+  prototype: "/main/assets/items/material/cottonflower.go"
+  position {
+    x: 2676.0
+    y: 326.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "cottonflower7"
+  prototype: "/main/assets/items/material/cottonflower.go"
+  position {
+    x: 4268.0
+    y: 813.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "cottonflower8"
+  prototype: "/main/assets/items/material/cottonflower.go"
+  position {
+    x: 4326.0
+    y: 1283.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "cottonflower9"
+  prototype: "/main/assets/items/material/cottonflower.go"
+  position {
+    x: 4845.0
+    y: 707.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "cottonflower10"
+  prototype: "/main/assets/items/material/cottonflower.go"
+  position {
+    x: 4643.0
+    y: 2490.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "cottonflower11"
+  prototype: "/main/assets/items/material/cottonflower.go"
+  position {
+    x: 4654.0
+    y: 2726.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "cottonflower12"
+  prototype: "/main/assets/items/material/cottonflower.go"
+  position {
+    x: 5076.0
+    y: 2529.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "cottonflower13"
+  prototype: "/main/assets/items/material/cottonflower.go"
+  position {
+    x: 4738.0
+    y: 2461.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone22"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 1417.0
+    y: 2575.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone8"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 1828.0
+    y: 2770.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone9"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 1473.0
+    y: 2707.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone10"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 2065.0
+    y: 2149.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "stone12"
+  prototype: "/main/assets/items/material/stone.go"
+  position {
+    x: 3216.0
+    y: 2547.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t31"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3336.0
+    y: 2150.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "31.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t5"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2629.0
+    y: 2150.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t32"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2538.0
+    y: 2150.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "32.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t27"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3216.0
+    y: 2150.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t28"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2993.0
+    y: 2150.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t34"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -2897.0
+    y: 2150.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "34.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "arrow_t29"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3624.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "arrow"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "tutorial_t33"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -3699.0
+    y: 1160.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "33.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "puls_t3"
+  prototype: "/main/assets/tutorial/question_block.go"
+  position {
+    x: -1630.0
+    y: 1071.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 6.123234E-17
+  }
+  component_properties {
+    id: "question_block"
+    properties {
+      id: "type"
+      value: "0.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "image"
+      value: "plus"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "handle1t1"
+  prototype: "/main/assets/items/material/handle.go"
+  position {
+    x: -1686.0
+    y: 1071.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "origin_axe1t"
+  prototype: "/main/assets/items/material/origin_axe.go"
+  position {
+    x: -1574.0
+    y: 1071.0
+    z: -0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "fence_collision"
+  prototype: "/main/assets/tutorial/fence_collision.go"
+  position {
+    x: -2806.0
+    y: 1887.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "fence_collision1"
+  prototype: "/main/assets/tutorial/fence_collision.go"
+  position {
+    x: -2633.0
+    y: 1423.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "map"
+  children: "hemp60"
+  children: "hemp61"
+  data: "components {\n"
+  "  id: \"map\"\n"
+  "  component: \"/main/assets/map/map.tilemap\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "gui"
+  data: "components {\n"
+  "  id: \"gaming\"\n"
+  "  component: \"/main/assets/gui/gaming.gui\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "components {\n"
+  "  id: \"recipe_gui\"\n"
+  "  component: \"/main/assets/gui/recipe_gui.gui\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "components {\n"
+  "  id: \"dead_gui\"\n"
+  "  component: \"/main/assets/gui/dead_gui.gui\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "components {\n"
+  "  id: \"main_menu\"\n"
+  "  component: \"/main/assets/gui/main_menu.gui\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "components {\n"
+  "  id: \"manual\"\n"
+  "  component: \"/main/assets/gui/manual.gui\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "components {\n"
+  "  id: \"clear\"\n"
+  "  component: \"/main/assets/gui/clear.gui\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "components {\n"
+  "  id: \"cheat\"\n"
+  "  component: \"/main/assets/gui/cheat.gui\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "components {\n"
+  "  id: \"menu_gui\"\n"
+  "  component: \"/main/assets/gui/menu_gui.gui\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"namu\"\n"
+  "  type: \"sound\"\n"
+  "  data: \"sound: \\\"/main/assets/sounds/namu.ogg\\\"\\n"
+  "looping: 0\\n"
+  "group: \\\"master\\\"\\n"
+  "gain: 0.1\\n"
+  "pan: 0.0\\n"
+  "speed: 1.0\\n"
+  "loopcount: 0\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"clear_sound\"\n"
+  "  type: \"sound\"\n"
+  "  data: \"sound: \\\"/main/assets/sounds/clear.ogg\\\"\\n"
+  "looping: 0\\n"
+  "group: \\\"master\\\"\\n"
+  "gain: 0.3\\n"
+  "pan: 0.0\\n"
+  "speed: 1.0\\n"
+  "loopcount: 0\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 398.0
+    y: -967.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "items"
+  children: "Walls"
+  children: "brown"
+  children: "gray"
+  children: "green"
+  children: "white"
+  data: ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "Walls"
+  children: "wall_down"
+  children: "wall_left"
+  children: "wall_right"
+  children: "wall_top"
+  data: ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "menu"
+  data: "components {\n"
+  "  id: \"menu\"\n"
+  "  component: \"/main/assets/map/menu.tilemap\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -2560.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "tutorial"
+  children: "acorn1t"
+  children: "acorn2t"
+  children: "apple1t"
+  children: "arrow_t"
+  children: "arrow_t1"
+  children: "arrow_t10"
+  children: "arrow_t11"
+  children: "arrow_t12"
+  children: "arrow_t13"
+  children: "arrow_t14"
+  children: "arrow_t15"
+  children: "arrow_t16"
+  children: "arrow_t17"
+  children: "arrow_t18"
+  children: "arrow_t19"
+  children: "arrow_t2"
+  children: "arrow_t20"
+  children: "arrow_t21"
+  children: "arrow_t22"
+  children: "arrow_t23"
+  children: "arrow_t24"
+  children: "arrow_t25"
+  children: "arrow_t26"
+  children: "arrow_t27"
+  children: "arrow_t28"
+  children: "arrow_t29"
+  children: "arrow_t3"
+  children: "arrow_t4"
+  children: "arrow_t5"
+  children: "arrow_t6"
+  children: "arrow_t7"
+  children: "arrow_t8"
+  children: "arrow_t9"
+  children: "axe1t"
+  children: "block"
+  children: "burning_furnace1t"
+  children: "circle"
+  children: "coal2t"
+  children: "coalmountain1t"
+  children: "completeitem2t"
+  children: "fence_collision"
+  children: "fence_collision1"
+  children: "flint1t"
+  children: "handle1t"
+  children: "handle1t1"
+  children: "hemp1t"
+  children: "hemp2t"
+  children: "knife1t"
+  children: "opened_coal_mountain1t"
+  children: "opened_iron_mountain1t1"
+  children: "origin_axe1t"
+  children: "panishment"
+  children: "pickaxe1t"
+  children: "puls_t"
+  children: "puls_t1"
+  children: "puls_t2"
+  children: "puls_t3"
+  children: "sand1t"
+  children: "sand1t1"
+  children: "sand1t2"
+  children: "sand2t"
+  children: "sand2t1"
+  children: "sand2t2"
+  children: "sand3t"
+  children: "sand3t1"
+  children: "sand3t2"
+  children: "sand4t"
+  children: "sand4t1"
+  children: "sand4t2"
+  children: "sand5t"
+  children: "sand5t1"
+  children: "sand5t2"
+  children: "stick1t"
+  children: "stick1t1"
+  children: "stone1t"
+  children: "tree1t"
+  children: "trunk1t"
+  children: "tutorial_map"
+  children: "tutorial_map1"
+  children: "tutorial_t1"
+  children: "tutorial_t10"
+  children: "tutorial_t11"
+  children: "tutorial_t12"
+  children: "tutorial_t13"
+  children: "tutorial_t14"
+  children: "tutorial_t15"
+  children: "tutorial_t16"
+  children: "tutorial_t17"
+  children: "tutorial_t18"
+  children: "tutorial_t19"
+  children: "tutorial_t2"
+  children: "tutorial_t20"
+  children: "tutorial_t21"
+  children: "tutorial_t22"
+  children: "tutorial_t23"
+  children: "tutorial_t24"
+  children: "tutorial_t25"
+  children: "tutorial_t26"
+  children: "tutorial_t27"
+  children: "tutorial_t28"
+  children: "tutorial_t29"
+  children: "tutorial_t3"
+  children: "tutorial_t30"
+  children: "tutorial_t31"
+  children: "tutorial_t32"
+  children: "tutorial_t33"
+  children: "tutorial_t34"
+  children: "tutorial_t4"
+  children: "tutorial_t5"
+  children: "tutorial_t6"
+  children: "tutorial_t7"
+  children: "tutorial_t8"
+  children: "tutorial_t9"
+  children: "wall_b"
+  children: "wall_l"
+  children: "wall_r"
+  children: "wall_t"
+  children: "wildplant1t"
+  data: ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "tutorial_map"
+  data: "components {\n"
+  "  id: \"tutorial\"\n"
+  "  component: \"/main/assets/map/tutorial.tilemap\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: -1.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/main/assets/map/tutorial.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"fixing\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "linear_damping: 0.0\\n"
+  "angular_damping: 0.0\\n"
+  "locked_rotation: false\\n"
+  "bullet: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -4000.0
+    y: 1000.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "tutorial_map1"
+  data: "components {\n"
+  "  id: \"tutorial\"\n"
+  "  component: \"/main/assets/map/tutorial.tilemap\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: -1.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -4000.0
+    y: 1000.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "green"
+  children: "camellia0"
+  children: "camellia1"
+  children: "chrysanthemum0"
+  children: "chrysanthemum1"
+  children: "cottonflower0"
+  children: "cottonflower1"
+  children: "cottonflower10"
+  children: "cottonflower11"
+  children: "cottonflower12"
+  children: "cottonflower13"
+  children: "cottonflower14"
+  children: "cottonflower2"
+  children: "cottonflower3"
+  children: "cottonflower4"
+  children: "cottonflower5"
+  children: "cottonflower6"
+  children: "cottonflower7"
+  children: "cottonflower8"
+  children: "cottonflower9"
+  children: "dahilia0"
+  children: "dahilia1"
+  children: "daisy0"
+  children: "daisy1"
+  children: "freesia0"
+  children: "freesia1"
+  children: "gentian0"
+  children: "gentian1"
+  children: "hemp0"
+  children: "hemp1"
+  children: "hemp10"
+  children: "hemp100"
+  children: "hemp101"
+  children: "hemp103"
+  children: "hemp104"
+  children: "hemp106"
+  children: "hemp107"
+  children: "hemp108"
+  children: "hemp109"
+  children: "hemp111"
+  children: "hemp112"
+  children: "hemp113"
+  children: "hemp114"
+  children: "hemp116"
+  children: "hemp117"
+  children: "hemp119"
+  children: "hemp12"
+  children: "hemp120"
+  children: "hemp121"
+  children: "hemp122"
+  children: "hemp123"
+  children: "hemp124"
+  children: "hemp126"
+  children: "hemp127"
+  children: "hemp128"
+  children: "hemp129"
+  children: "hemp13"
+  children: "hemp131"
+  children: "hemp132"
+  children: "hemp133"
+  children: "hemp135"
+  children: "hemp137"
+  children: "hemp138"
+  children: "hemp14"
+  children: "hemp141"
+  children: "hemp142"
+  children: "hemp16"
+  children: "hemp17"
+  children: "hemp18"
+  children: "hemp2"
+  children: "hemp20"
+  children: "hemp21"
+  children: "hemp23"
+  children: "hemp24"
+  children: "hemp25"
+  children: "hemp27"
+  children: "hemp28"
+  children: "hemp29"
+  children: "hemp3"
+  children: "hemp30"
+  children: "hemp31"
+  children: "hemp32"
+  children: "hemp33"
+  children: "hemp35"
+  children: "hemp36"
+  children: "hemp37"
+  children: "hemp38"
+  children: "hemp39"
+  children: "hemp41"
+  children: "hemp42"
+  children: "hemp43"
+  children: "hemp44"
+  children: "hemp46"
+  children: "hemp47"
+  children: "hemp48"
+  children: "hemp5"
+  children: "hemp50"
+  children: "hemp51"
+  children: "hemp52"
+  children: "hemp53"
+  children: "hemp54"
+  children: "hemp56"
+  children: "hemp57"
+  children: "hemp58"
+  children: "hemp6"
+  children: "hemp62"
+  children: "hemp63"
+  children: "hemp65"
+  children: "hemp66"
+  children: "hemp68"
+  children: "hemp69"
+  children: "hemp7"
+  children: "hemp70"
+  children: "hemp72"
+  children: "hemp73"
+  children: "hemp74"
+  children: "hemp76"
+  children: "hemp77"
+  children: "hemp78"
+  children: "hemp79"
+  children: "hemp8"
+  children: "hemp80"
+  children: "hemp82"
+  children: "hemp83"
+  children: "hemp85"
+  children: "hemp86"
+  children: "hemp87"
+  children: "hemp89"
+  children: "hemp9"
+  children: "hemp90"
+  children: "hemp92"
+  children: "hemp93"
+  children: "hemp94"
+  children: "hemp95"
+  children: "hemp96"
+  children: "hemp97"
+  children: "hemp98"
+  children: "tree0"
+  children: "tree1"
+  children: "tree10"
+  children: "tree11"
+  children: "tree12"
+  children: "tree13"
+  children: "tree14"
+  children: "tree15"
+  children: "tree17"
+  children: "tree19"
+  children: "tree2"
+  children: "tree20"
+  children: "tree22"
+  children: "tree23"
+  children: "tree25"
+  children: "tree26"
+  children: "tree27"
+  children: "tree28"
+  children: "tree29"
+  children: "tree3"
+  children: "tree30"
+  children: "tree32"
+  children: "tree33"
+  children: "tree35"
+  children: "tree36"
+  children: "tree38"
+  children: "tree39"
+  children: "tree4"
+  children: "tree40"
+  children: "tree42"
+  children: "tree43"
+  children: "tree44"
+  children: "tree46"
+  children: "tree47"
+  children: "tree49"
+  children: "tree5"
+  children: "tree50"
+  children: "tree51"
+  children: "tree53"
+  children: "tree6"
+  children: "tree8"
+  children: "tree9"
+  children: "wildplant1"
+  children: "wildplant10"
+  children: "wildplant11"
+  children: "wildplant13"
+  children: "wildplant14"
+  children: "wildplant15"
+  children: "wildplant17"
+  children: "wildplant18"
+  children: "wildplant19"
+  children: "wildplant2"
+  children: "wildplant20"
+  children: "wildplant21"
+  children: "wildplant23"
+  children: "wildplant3"
+  children: "wildplant4"
+  children: "wildplant6"
+  children: "wildplant7"
+  children: "wildplant8"
+  data: ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "gray"
+  children: "quartz0"
+  children: "quartz1"
+  children: "quartz10"
+  children: "quartz12"
+  children: "quartz14"
+  children: "quartz15"
+  children: "quartz16"
+  children: "quartz17"
+  children: "quartz18"
+  children: "quartz22"
+  children: "quartz23"
+  children: "quartz24"
+  children: "quartz25"
+  children: "quartz27"
+  children: "quartz28"
+  children: "quartz29"
+  children: "quartz32"
+  children: "quartz33"
+  children: "quartz34"
+  children: "quartz35"
+  children: "quartz38"
+  children: "quartz39"
+  children: "quartz40"
+  children: "quartz41"
+  children: "quartz43"
+  children: "quartz44"
+  children: "quartz45"
+  children: "quartz46"
+  children: "quartz48"
+  children: "quartz49"
+  children: "quartz5"
+  children: "quartz51"
+  children: "quartz52"
+  children: "quartz55"
+  children: "quartz56"
+  children: "quartz57"
+  children: "quartz58"
+  children: "quartz6"
+  children: "quartz60"
+  children: "quartz61"
+  children: "quartz62"
+  children: "quartz63"
+  children: "quartz7"
+  children: "quartz8"
+  children: "stone1"
+  children: "stone10"
+  children: "stone103"
+  children: "stone105"
+  children: "stone107"
+  children: "stone108"
+  children: "stone11"
+  children: "stone111"
+  children: "stone112"
+  children: "stone114"
+  children: "stone115"
+  children: "stone119"
+  children: "stone12"
+  children: "stone121"
+  children: "stone122"
+  children: "stone124"
+  children: "stone125"
+  children: "stone13"
+  children: "stone130"
+  children: "stone131"
+  children: "stone135"
+  children: "stone136"
+  children: "stone138"
+  children: "stone14"
+  children: "stone140"
+  children: "stone142"
+  children: "stone144"
+  children: "stone145"
+  children: "stone18"
+  children: "stone2"
+  children: "stone20"
+  children: "stone22"
+  children: "stone23"
+  children: "stone24"
+  children: "stone25"
+  children: "stone26"
+  children: "stone3"
+  children: "stone30"
+  children: "stone31"
+  children: "stone33"
+  children: "stone37"
+  children: "stone38"
+  children: "stone4"
+  children: "stone41"
+  children: "stone45"
+  children: "stone46"
+  children: "stone47"
+  children: "stone5"
+  children: "stone50"
+  children: "stone51"
+  children: "stone53"
+  children: "stone55"
+  children: "stone58"
+  children: "stone6"
+  children: "stone61"
+  children: "stone64"
+  children: "stone66"
+  children: "stone69"
+  children: "stone7"
+  children: "stone70"
+  children: "stone72"
+  children: "stone74"
+  children: "stone77"
+  children: "stone79"
+  children: "stone8"
+  children: "stone82"
+  children: "stone85"
+  children: "stone88"
+  children: "stone89"
+  children: "stone9"
+  children: "stone91"
+  children: "stone93"
+  children: "stone95"
+  children: "stone97"
+  children: "stone98"
+  data: ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "brown"
+  children: "coalmountain0"
+  children: "coalmountain1"
+  children: "coalmountain10"
+  children: "coalmountain11"
+  children: "coalmountain12"
+  children: "coalmountain13"
+  children: "coalmountain14"
+  children: "coalmountain15"
+  children: "coalmountain16"
+  children: "coalmountain17"
+  children: "coalmountain18"
+  children: "coalmountain2"
+  children: "coalmountain3"
+  children: "coalmountain4"
+  children: "coalmountain5"
+  children: "coalmountain6"
+  children: "coalmountain7"
+  children: "coalmountain8"
+  children: "coalmountain9"
+  children: "ironmountain0"
+  children: "ironmountain1"
+  children: "ironmountain10"
+  children: "ironmountain11"
+  children: "ironmountain12"
+  children: "ironmountain13"
+  children: "ironmountain14"
+  children: "ironmountain15"
+  children: "ironmountain16"
+  children: "ironmountain17"
+  children: "ironmountain18"
+  children: "ironmountain19"
+  children: "ironmountain2"
+  children: "ironmountain20"
+  children: "ironmountain21"
+  children: "ironmountain3"
+  children: "ironmountain4"
+  children: "ironmountain5"
+  children: "ironmountain6"
+  children: "ironmountain7"
+  children: "ironmountain8"
+  children: "ironmountain9"
+  children: "mushroom0"
+  children: "mushroom1"
+  children: "mushroom10"
+  children: "mushroom11"
+  children: "mushroom13"
+  children: "mushroom14"
+  children: "mushroom2"
+  children: "mushroom4"
+  children: "mushroom5"
+  children: "mushroom6"
+  children: "mushroom7"
+  children: "mushroom9"
+  data: ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "white"
+  children: "sandmountain0"
+  children: "sandmountain1"
+  children: "sandmountain10"
+  children: "sandmountain11"
+  children: "sandmountain12"
+  children: "sandmountain13"
+  children: "sandmountain2"
+  children: "sandmountain3"
+  children: "sandmountain4"
+  children: "sandmountain5"
+  children: "sandmountain6"
+  children: "sandmountain7"
+  children: "sandmountain8"
+  children: "sandmountain9"
+  data: ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}

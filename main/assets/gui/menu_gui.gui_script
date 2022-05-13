@@ -1,0 +1,116 @@
+
+function init(self)
+  -- 管理用変数設定
+  msg.post(".", "acquire_input_focus")
+  menu_button = gui.get_node("button")
+  resume_button = gui.get_node("resume")
+  recipes_button = gui.get_node("recipes")
+  keybind = gui.get_node("keybind")
+  backmenu = gui.get_node("backmenu")
+  menu_background = gui.get_node("menu_background")
+  mission_view_item = gui.get_node("mission_view_item")
+  mission_view_text = gui.get_node("mission_view_text")
+  mission_view = gui.get_node("mission_view")
+
+  menu_status={}
+  set_menu_visible(false)
+
+  gui.set_enabled(gui.get_node("menu_background"), false)
+  gui.set_enabled(gui.get_node("button"), false)
+end
+
+
+function on_message(self, message_id, message, sender)
+  if not gamestatus then return end
+  if message_id == hash("show_menu") then
+    set_menu_visible(true)
+  elseif message_id == hash("hide_menu") then
+    set_menu_visible(false)
+  elseif message_id == hash("gamestart") then
+  gui.set_enabled(gui.get_node("menu_background"), true)
+  gui.set_enabled(gui.get_node("button"), true)
+  end
+end
+
+function on_input(self, action_id, action)
+    if (action_id == hash("leftclick") or action_id == hash("rightclick")) and action.pressed then
+      --menu button
+      if not gamestatus then return end
+      if gui.pick_node(menu_button, action.x, action.y) then
+        if menu_status["menu_open"] then
+          set_menu_visible(false)
+        else
+          set_menu_visible(true)
+        end
+      elseif menu_status["menu_open"] then
+        if gui.pick_node(resume_button, action.x, action.y) then
+          set_menu_visible(false)
+        elseif gui.pick_node(recipes_button, action.x, action.y) then
+          set_menu_visible(false)
+          msg.post("gui", "show_recipebook")
+        elseif gui.pick_node(keybind, action.x, action.y) then
+          set_menu_visible(false)
+          msg.post("gui", "show_manual")
+        elseif gui.pick_node(backmenu, action.x, action.y) then
+          if difficulty == 6 then
+            speed = 150
+          end
+          msg.post("main:/proxy", "reboot")
+        elseif gui.pick_node(mission_view_item, action.x, action.y) or gui.pick_node(mission_view_text, action.x, action.y) then
+          rb_filter_item = mission_item
+          msg.post("gui", "show_recipebook", {flag = true})
+        end
+      end
+    end
+end
+
+function set_menu_visible(value)
+    if value then
+        if menu_status["dead"] or menu_status ["cheat"] then return end
+        if menu_status["recipebook"] then
+          msg.post("gui", "hide_recipebook")
+        end
+        if menu_status["manual"] then
+          msg.post("gui", "hide_manual")
+        end
+        --animation
+        gui.set_position(resume_button  , vmath.vector3(2100, 540, 0))
+        gui.animate(resume_button , "position.x", 640, gui.EASING_OUTEXPO, 0.8, 0, nil, gui.PLAYBACK_ONCE_FORWARD)
+        gui.set_position(recipes_button, vmath.vector3(1900, 420, 0))
+        gui.animate(recipes_button, "position.x", 640, gui.EASING_OUTEXPO, 0.8, 0, nil, gui.PLAYBACK_ONCE_FORWARD)
+        gui.set_position(keybind, vmath.vector3(1700, 300, 0))
+        gui.animate(keybind, "position.x", 640, gui.EASING_OUTEXPO, 0.8, 0, nil, gui.PLAYBACK_ONCE_FORWARD)
+        gui.set_position(backmenu, vmath.vector3(1500, 180, 0))
+        gui.animate(backmenu, "position.x", 640, gui.EASING_OUTEXPO, 0.8, 0, nil, gui.PLAYBACK_ONCE_FORWARD)
+        gui.set_position(mission_view, vmath.vector3(230, 850, 0))
+        gui.animate(mission_view, "position.y", 480, gui.EASING_OUTEXPO, 1, 0, nil, gui.PLAYBACK_ONCE_FORWARD)
+        gui.set_position(mission_view_text, vmath.vector3(230, 850, 0))
+        gui.animate(mission_view_text, "position.y", 400, gui.EASING_OUTEXPO, 1, 0, nil, gui.PLAYBACK_ONCE_FORWARD)
+        gui.set_position(mission_view_item, vmath.vector3(230, 850, 0))
+        gui.animate(mission_view_item, "position.y", 335, gui.EASING_OUTEXPO, 1, 0, nil, gui.PLAYBACK_ONCE_FORWARD)
+        gui.animate(menu_button, "position.y", -50, gui.EASING_OUTEXPO, 1, 0, nil, gui.PLAYBACK_ONCE_FORWARD)
+
+        --gui
+        gui.set_color(menu_background, vmath.vector4(0, 0, 0, 0.5))
+        gui.set_color(resume_button, vmath.vector4(gui.get_color(resume_button).x, gui.get_color(resume_button).y, gui.get_color(resume_button).z, 1))
+        gui.set_color(recipes_button, vmath.vector4(gui.get_color(recipes_button).x, gui.get_color(recipes_button).y, gui.get_color(recipes_button).z, 1))
+        gui.set_color(keybind, vmath.vector4(gui.get_color(keybind).x, gui.get_color(keybind).y, gui.get_color(keybind).z, 1))
+        gui.set_color(backmenu, vmath.vector4(gui.get_color(backmenu).x, gui.get_color(backmenu).y, gui.get_color(backmenu).z, 1))
+        gui.set_color(mission_view_item, vmath.vector4(gui.get_color(mission_view_item).x, gui.get_color(mission_view_item).y, gui.get_color(mission_view_item).z, 1))
+        gui.set_color(mission_view_text, vmath.vector4(gui.get_color(mission_view_text).x, gui.get_color(mission_view_text).y, gui.get_color(mission_view_text).z, 1))
+        gui.set_color(mission_view, vmath.vector4(gui.get_color(mission_view).x, gui.get_color(mission_view).y, gui.get_color(mission_view).z, 1))
+        gui.set_text(mission_view_text,english_to_japanese(mission_item))
+          gui.play_flipbook(mission_view_item, mission_item)
+    else
+      gui.set_color(menu_background, vmath.vector4(0, 0, 0, 0))
+      gui.set_color(resume_button, vmath.vector4(gui.get_color(resume_button).x, gui.get_color(resume_button).y, gui.get_color(resume_button).z, 0))
+      gui.set_color(recipes_button, vmath.vector4(gui.get_color(recipes_button).x, gui.get_color(recipes_button).y, gui.get_color(recipes_button).z, 0))
+      gui.set_color(keybind, vmath.vector4(gui.get_color(keybind).x, gui.get_color(keybind).y, gui.get_color(keybind).z, 0))
+      gui.set_color(backmenu, vmath.vector4(gui.get_color(backmenu).x, gui.get_color(backmenu).y, gui.get_color(backmenu).z, 0))
+      gui.set_color(mission_view_item, vmath.vector4(gui.get_color(mission_view_item).x, gui.get_color(mission_view_item).y, gui.get_color(mission_view_item).z, 0))
+      gui.set_color(mission_view_text, vmath.vector4(gui.get_color(mission_view_text).x, gui.get_color(mission_view_text).y, gui.get_color(mission_view_text).z, 0))
+      gui.set_color(mission_view, vmath.vector4(gui.get_color(mission_view).x, gui.get_color(mission_view).y, gui.get_color(mission_view).z, 0))
+      gui.animate(menu_button, "position.y", 48, gui.EASING_OUTEXPO, 1, 0, nil, gui.PLAYBACK_ONCE_FORWARD)
+    end
+    menu_status["menu_open"] = value
+end
